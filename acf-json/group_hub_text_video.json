@@ -1,0 +1,229 @@
+{
+  "key": "group_hub_text_video",
+  "title": "HUB Text Video",
+  "fields": [
+    {
+      "key": "field_hub_text_video_title",
+      "label": "HUB Text Video",
+      "name": "",
+      "aria-label": "",
+      "type": "message",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": false,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "message": "",
+      "esc_html": 0,
+      "new_lines": "wpautop"
+    },
+    {
+      "key": "field_68e66a54849db",
+      "label": "Title",
+      "name": "title",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "75",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "allow_in_bindings": 0,
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_68e7771d83a63",
+      "label": "Level",
+      "name": "level",
+      "aria-label": "",
+      "type": "radio",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "25",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "h1": "h1",
+        "h2": "h2"
+      },
+      "default_value": "h2",
+      "return_format": "value",
+      "allow_null": 0,
+      "other_choice": 0,
+      "allow_in_bindings": 0,
+      "layout": "horizontal",
+      "save_other_choice": 0
+    },
+    {
+      "key": "field_68e66a5a849dc",
+      "label": "Content",
+      "name": "content",
+      "aria-label": "",
+      "type": "wysiwyg",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "allow_in_bindings": 0,
+      "tabs": "all",
+      "toolbar": "full",
+      "media_upload": 1,
+      "delay": 0
+    },
+    {
+      "key": "field_68e66a66849dd",
+      "label": "CTA",
+      "name": "cta",
+      "aria-label": "",
+      "type": "link",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "array",
+      "allow_in_bindings": 0
+    },
+    {
+      "key": "field_68e66a70849de",
+      "label": "Vimeo ID",
+      "name": "vimeo_id",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "allow_in_bindings": 0,
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_690c8c1d10b41",
+      "label": "Split (text:video)",
+      "name": "split",
+      "aria-label": "",
+      "type": "radio",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "60-40": "60:40",
+        "50-50": "50:50",
+        "40-60": "40:60"
+      },
+      "default_value": "60-40",
+      "return_format": "value",
+      "allow_null": 0,
+      "other_choice": 0,
+      "allow_in_bindings": 0,
+      "layout": "horizontal",
+      "save_other_choice": 0
+    },
+    {
+      "key": "field_6937e2a69dd61",
+      "label": "Content Alignment",
+      "name": "content_alignment",
+      "aria-label": "",
+      "type": "radio",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "Top": "Top",
+        "Middle": "Middle"
+      },
+      "default_value": "Top",
+      "return_format": "value",
+      "allow_null": 0,
+      "other_choice": 0,
+      "allow_in_bindings": 0,
+      "layout": "horizontal",
+      "save_other_choice": 0
+    },
+    {
+      "key": "field_693830591e945",
+      "label": "Has Watermark",
+      "name": "has_watermark",
+      "aria-label": "",
+      "type": "checkbox",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "Yes": "Yes"
+      },
+      "default_value": [],
+      "return_format": "value",
+      "allow_custom": 0,
+      "allow_in_bindings": 0,
+      "layout": "vertical",
+      "toggle": 0,
+      "save_custom": 0,
+      "custom_choice_button_text": "Add new choice"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf\/hub-text-video"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "display_title": "",
+  "modified": 1767956363
+}

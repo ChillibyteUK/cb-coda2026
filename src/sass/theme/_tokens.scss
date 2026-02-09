@@ -1,0 +1,130 @@
+$col-primary: #27383a;
+$col-dark: #222222;
+$col-darkest: #4a4a4a;
+$col-light: #f2f2f2;
+
+:root {
+  /* =========================
+     COLOURS (HSL + computed)
+     ========================= */
+
+  --col-white-hsl: 0 0% 100%;
+  /* #FFFFFF – pure white */
+  --col-white: hsl(var(--col-white-hsl));
+
+  --col-black-hsl: 0 0% 0%;
+  /* #000000 – pure black */
+  --col-black: hsl(var(--col-black-hsl));
+
+  --col-sipco-navy-hsl: 210 30% 20%;
+  /* #152634 – sipco navy */
+  --col-sipco-navy: hsl(var(--col-sipco-navy-hsl));
+
+  --col-sipco-red-hsl: 353 60% 38%;
+  /* #9a2634 – sipco red */
+  --col-sipco-red: hsl(var(--col-sipco-red-hsl));
+
+  --col-dark-grey-hsl: 0 0% 44%;
+  /* #707074 – dark grey */
+  --col-dark-grey: hsl(var(--col-dark-grey-hsl));
+
+  --col-light-gold-hsl: 47 18% 90%;
+  /* #eae8e1 – light gold */
+  --col-light-gold: hsl(var(--col-light-gold-hsl));
+
+  --col-light-gold-40: hsl(var(--col-light-gold-hsl) / 0.4);
+
+  --col-sipco-grey: hsl(var(--col-light-gold-hsl));
+
+  --col-sipco-coral-15: #f5eae9;
+  --col-sipco-coral-30: #ead5d3;
+  --col-sipco-coral-50: #ddb9b5;
+  --col-sipco-coral-100: #ba736c;
+
+  --col-sipco-dark-grey: #707074;
+  --col-sipco-mid-grey: #f4f4f4;
+  --col-sipco-light-grey: #f8f8f7;
+
+  --col-form-grey: #F5F2EC;
+
+  /* =========================
+     TYPOGRAPHY (families/weights)
+     ========================= */
+  --ff-heading:
+    "Acumin Pro", "acumin-pro", monospace, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --ff-body:
+    "Acumin Pro", "acumin-pro", monospace, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+
+  /* 
+  100 thin
+  200 extra light
+  300 light
+  400 regular
+  500 medium
+  600 semibold
+  700 bold
+  800 black
+  900 ultra black
+  */
+
+  --fw-bold: 700;
+  --fw-medium: 500;
+  --fw-regular: 400;
+  --fw-light: 300;
+
+  /* =========================
+    TYPOGRAPHY
+    ========================= */
+
+  /* body size defined globally */
+  --fs-base: clamp(0.95rem, 0.9rem + 0.3vw, 1rem); /* 17.1px - 18px */
+
+  /* hierarchy */
+  // --fs-ticker: clamp(3rem, 2rem + 4vw, 5rem); /* 54px - 90px */
+  --fs-ticker: clamp(2.25rem, 1.9rem + 2.6vw, 4rem); /* ~36px – 72px */
+  --lh-ticker: 1.1;
+  --fw-ticker: var(--fw-bold);
+
+  --fs-h1: clamp(1.75rem, 1.4rem + 1.6vw, 3rem); /* 31.5px - 54px */
+  --lh-h1: 1.2;
+  --fw-h1: var(--fw-bold);
+
+  --fs-h2: clamp(1.5rem, 1.3rem + 1vw, 2rem); /* 27px - 36px */
+  --lh-h2: 1.2;
+  --fw-h2: var(--fw-bold);
+
+  --fs-h3: clamp(1.25rem, 1.15rem + 0.8vw, 1.6rem); /* 22.5px - 28.8px */
+  --lh-h3: 1.2;
+  --fw-h3: var(--fw-bold);
+
+  --fs-h4: clamp(1.15rem, 1.05rem + 0.6vw, 1.4rem); /* 20.7px - 25.2px */
+  --lh-h4: 1.2;
+  --fw-h4: var(--fw-light);
+
+  --fs-h5: clamp(1.05rem, 1rem + 0.4vw, 1.25rem); /* 18.9px - 22.5px */
+  --lh-h5: 1.2;
+  --fw-h5: var(--fw-bold);
+
+  --fs-lead-in: clamp(1.1rem, 1rem + 0.5vw, 1.3rem); /* 19.8px - 23.4px */
+  --lh-lead-in: 1.5;
+  --fw-lead-in: var(--fw-medium);
+
+  --fs-body-medium: clamp(1rem, 0.95rem + 0.3vw, 1.125rem); /* 18px - 20.25px */  
+  --lh-body-medium: 1.5;
+
+  --fs-body: var(--fs-base); /* 17.1px - 18px */
+  --lh-body: 1.5;
+  --fw-body: var(--fw-light);
+
+  --fs-small: clamp(0.85rem, 0.8rem + 0.2vw, 0.9rem); /* 15.3px - 16.2px */
+  --lh-small: 1.5;
+  --fw-small: var(--fw-medium);
+
+  /* === Utilities === */
+  --transition: 250ms ease-out;
+
+  --h-top: 72px;
+  --h-top-desktop: 130px;
+}

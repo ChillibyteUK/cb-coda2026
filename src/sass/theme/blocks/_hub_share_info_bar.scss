@@ -1,0 +1,12 @@
+.share-info-bar {
+    background-color: var(--col-sipco-red);
+    color: var(--col-white);
+    h2 {
+        font-size: var(--fs-body-medium);
+    }
+    &__value {
+        font-weight: var(--fw-bold);
+        font-size: 3.5rem;
+        line-height: 1;
+    }
+}

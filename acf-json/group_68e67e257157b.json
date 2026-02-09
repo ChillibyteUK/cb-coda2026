@@ -1,0 +1,61 @@
+{
+    "key": "group_68e67e257157b",
+    "title": "Category Colour",
+    "fields": [
+        {
+            "key": "field_68e67e2501b79",
+            "label": "Background",
+            "name": "bg_colour",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "simco-navy": "simco-navy",
+                "simco-red": "simco-red",
+                "simco-mid-blue": "simco-mid-blue",
+                "dark-grey": "dark-grey",
+                "simco-gold": "simco-gold",
+                "light-gold": "light-gold",
+                "simco-grey": "simco-grey",
+                "simco-bluegrey-50": "simco-bluegrey-50"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 1,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "category"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1759936069
+}

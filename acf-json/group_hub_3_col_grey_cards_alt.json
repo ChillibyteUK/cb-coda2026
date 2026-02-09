@@ -1,0 +1,23 @@
+{
+  "key": "group_hub_3_col_grey_cards_alt",
+  "title": "HUB 3 Col Grey Cards Alt",
+  "fields": [
+    {
+      "key": "field_hub_3_col_grey_cards_alt_title",
+      "label": "HUB 3 Col Grey Cards Alt",
+      "name": "title",
+      "type": "message"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/hub-3-col-grey-cards-alt"
+      }
+    ]
+  ],
+  "active": 1,
+  "description": ""
+}

@@ -1,0 +1,17 @@
+.four-col-image-cards {
+    &__card {
+        width: 100%;
+        height: 100%;
+        background-color: var(--col-simco-grey);
+    }
+    &__card-image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+    }
+    &__card-body {
+        padding: 1rem 1rem 2rem 1rem;
+    }
+
+}

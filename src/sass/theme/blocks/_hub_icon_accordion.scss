@@ -1,0 +1,53 @@
+.icon-accordion-block {
+    // Disable Bootstrap collapse animation for snappier scroll-to-top alignment
+    .accordion-collapse {
+        transition: none !important;
+    }
+
+    .accordion-item {
+        border: none;
+    }
+    .accordion-button {
+        padding: 1rem;
+        font-size: var(--fs-h3);
+        font-weight: var(--fw-bold);
+        color: var(--col-dark-gold);
+        background-color: transparent;
+        display: flex;
+        gap: 2rem;
+        border-bottom: 1px solid var(--col-sipco-coral-100);
+        transition: background-color var(--transition);
+        img {
+            width: 90px;
+            height: 90px;
+        }
+        &[aria-expanded="true"] {
+            border-bottom: none;
+        }
+        &:hover {
+            background-color: var(--col-lightest-gold);
+        }
+        &:not(.collapsed) {
+            box-shadow: none;
+        }
+    }
+
+    .accordion-body {
+        padding-top: 0;
+        border-top: none;
+        border-bottom: 5px solid var(--col-sipco-red);
+        transition: border-color var(--transition);
+        &__inner {
+            margin-bottom: 1rem;
+            border-left: 10px solid var(--col-sipco-coral-50);
+            background-color: var(--col-light-gold-40);
+            padding: 3rem;
+            margin-top: 1rem;
+            @media (min-width: 992px) {
+                margin-top: 0;
+                margin-left: 100px;
+            }
+        }
+    }
+
+}

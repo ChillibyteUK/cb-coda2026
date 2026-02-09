@@ -1,0 +1,36 @@
+.footer {
+  background-color: var(--col-sipco-grey);
+  color: var(--col-black);
+
+  font-size: var(--fs-small);
+
+  ul {
+    margin-block: 0;
+  }
+
+  &__menu {
+    list-style: none;
+    padding-inline-start: 0;
+  }
+
+  a {
+    text-decoration: none;
+    font-size: inherit;
+    color: var(--col-black);
+    transition: color var(--transition);
+    &:hover {
+      color: var(--col-simco-gold);
+    }
+  }
+
+  .logo-grid {
+    display: grid;
+    row-gap: 1rem;
+    grid-template-rows: 1fr auto;
+    img {
+      max-width: 280px;
+      height: auto;
+    }
+  }
+
+}

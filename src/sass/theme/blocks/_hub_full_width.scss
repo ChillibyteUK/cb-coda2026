@@ -1,0 +1,33 @@
+.has-slanted-bg {
+    position: relative;
+    // Apply clip-path directly to create slanted bottom edge
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4rem), 0 100%);
+    // Add bottom padding to ensure content doesn't get cut off
+    padding-top: 3rem;
+    padding-bottom: 6rem;
+}
+
+.has-slanted-top-bg {
+    position: relative;
+    // Apply clip-path directly to create slanted top edge
+    clip-path: polygon(0 4rem, 100% 0, 100% 100%, 0 100%);
+    // Add top padding to ensure content doesn't get cut off
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+}
+
+.has-slanted-both-bg {
+    position: relative;
+    // Apply clip-path for both top and bottom slanted edges
+    clip-path: polygon(0 4rem, 100% 0, 100% calc(100% - 4rem), 0 100%);
+    // Add padding for both slanted areas
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+.full-width {
+    p {
+        max-width: 90ch;
+        text-wrap: pretty;
+    }
+}

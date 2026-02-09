@@ -1,0 +1,23 @@
+.three-col-image-cards {
+    &__card {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 2rem;
+    }
+    &__card-image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        margin-bottom: 1rem;
+    }
+    &__card-body {
+        padding-inline: 1rem;
+        font-family: var(--ff-body);
+        font-size: var(--fs-body);
+        line-height: var(--lh-body);
+        font-weight: var(--fw-body);
+        text-wrap: balance;
+    }
+
+}

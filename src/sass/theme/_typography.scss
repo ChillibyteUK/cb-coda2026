@@ -1,0 +1,198 @@
+// :root {
+//   font-variant-ligatures: none;
+// }
+
+/* =========================
+   SCROLL ANIMATIONS
+   ========================= */
+
+[data-aos] {
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+}
+
+/* Fade animations */
+[data-aos="fade"] {
+  transform: scale(0.95);
+}
+[data-aos="fade"].aos-animate {
+  transform: scale(1);
+}
+
+[data-aos="fade-up"] {
+  transform: translateY(50px);
+}
+[data-aos="fade-up"].aos-animate {
+  transform: translateY(0);
+}
+
+[data-aos="fade-down"] {
+  transform: translateY(-50px);
+}
+[data-aos="fade-down"].aos-animate {
+  transform: translateY(0);
+}
+
+[data-aos="fade-left"] {
+  transform: translateX(50px);
+}
+[data-aos="fade-left"].aos-animate {
+  transform: translateX(0);
+}
+
+[data-aos="fade-right"] {
+  transform: translateX(-50px);
+}
+[data-aos="fade-right"].aos-animate {
+  transform: translateX(0);
+}
+
+/* Animation delays */
+[data-aos][data-aos-delay="100"] {
+  transition-delay: 0.1s;
+}
+[data-aos][data-aos-delay="200"] {
+  transition-delay: 0.2s;
+}
+[data-aos][data-aos-delay="300"] {
+  transition-delay: 0.3s;
+}
+[data-aos][data-aos-delay="400"] {
+  transition-delay: 0.4s;
+}
+[data-aos][data-aos-delay="500"] {
+  transition-delay: 0.5s;
+}
+
+/* =========================
+   TYPOGRAPHY
+   ========================= */
+
+html {
+  font-size: 18px;
+  // text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: always; /* Chrome ignores this but harmless */
+}
+
+body,
+.body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-body);
+  line-height: var(--lh-body);
+  color: var(--col-simco-navy);
+}
+
+strong {
+  font-weight: var(--fw-bold);
+}
+
+// =========================
+// TYPOGRAPHY
+// =========================
+
+// Headings
+h1, .h1 {
+  font-family: var(--ff-body);
+  font-size: var(--fs-h1);
+  line-height: var(--lh-h1);
+  font-weight: var(--fw-h1);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+h2, .h2 {
+  font-family: var(--ff-body);
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
+  font-weight: var(--fw-h2);
+  letter-spacing: -0.005em;
+  text-wrap: balance;
+}
+h3, .h3 {
+  font-family: var(--ff-body);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+  font-weight: var(--fw-h3);
+  text-wrap: balance;
+}
+h4, .h4 {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-h4);
+  line-height: var(--lh-h4);
+  font-weight: var(--fw-bold);
+  text-wrap: balance;
+}
+
+.body-medium {
+  font-family: var(--ff-body);
+  font-size: var(--fs-lead-in);
+  line-height: var(--lh-lead-in);
+  font-weight: var(--fw-lead-in);
+}
+
+// Large text on image
+.large-text-on-image {
+  font-family: var(--ff-body);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+}
+
+// Button text
+.button-text, button, .btn {
+  font-family: var(--ff-body);
+  font-size: var(--fs-button-text);
+  line-height: var(--lh-button-text);
+  font-weight: var(--fw-button-text);
+}
+
+// Helper classes for standalone typography variables
+.fw-heading { font-weight: var(--fw-700); }
+.fw-body { font-weight: var(--fw-300); }
+.fw-bold { font-weight: var(--fw-bold); }
+
+.fs-base { font-size: var(--fs-base); }
+.fs-body { font-size: var(--fs-body); }
+.fs-body-medium { font-size: var(--fs-body-medium); }
+.fs-h1-big-page-title { font-size: var(--fs-h1-big-page-title); }
+.fs-h2 { font-size: var(--fs-h2); }
+.fs-h3 { font-size: var(--fs-h3); }
+.fs-h4-body-bold { font-size: var(--fs-h4-body-bold); }
+.fs-large-text-on-image { font-size: var(--fs-large-text-on-image); }
+.fs-button-text { font-size: var(--fs-button-text); }
+
+// Links
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+a:focus-visible {
+  outline-offset: 2px;
+}
+// Media rhythm
+p, ul, ol, blockquote, figure {
+  margin-block: 0.75em;
+}
+.w-constrained-xs {
+  max-width: 30ch;
+  text-wrap: pretty;
+}
+.w-constrained-sm {
+  max-width: 50ch;
+  text-wrap: pretty;
+}
+.w-constrained-md {
+  max-width: 90ch;
+  text-wrap: pretty;
+}
