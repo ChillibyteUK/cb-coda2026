@@ -2,7 +2,7 @@
 /**
  * Utility functions and shortcodes.
  *
- * @package hub-sipco2026
+ * @package cb-coda2026
  */
 
 /**

@@ -5,7 +5,7 @@
  * This file contains the footer section of the theme, including navigation menus,
  * office addresses, and colophon information.
  *
- * @package hub-sipco2026
+ * @package cb-coda2026
  */
 
 defined( 'ABSPATH' ) || exit;

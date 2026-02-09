@@ -4,7 +4,7 @@
  *
  * This file contains the code to register custom post types for the theme.
  *
- * @package hub-sipco2026
+ * @package cb-coda2026
  */
 
 /**
@@ -43,4 +43,4 @@ function cb_register_post_types() {
 	);
 
 }
-add_action( 'init', 'cb_register_post_types' );
+// add_action( 'init', 'cb_register_post_types' );

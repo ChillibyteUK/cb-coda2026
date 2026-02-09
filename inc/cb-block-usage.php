@@ -2,7 +2,7 @@
 /**
  * Block usage shortcode for debugging/QA.
  *
- * @package hub-sipco2026
+ * @package cb-coda2026
  */
 
 defined( 'ABSPATH' ) || exit;

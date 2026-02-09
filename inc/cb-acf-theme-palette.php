@@ -2,7 +2,7 @@
 /**
  * Integrate ACF color picker fields with the theme's color palette.
  *
- * @package hub-sipco2026
+ * @package cb-coda2026
  */
 
 // Field name: bg_colour.

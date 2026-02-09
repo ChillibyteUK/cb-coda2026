@@ -4,7 +4,7 @@
  *
  * Demonstrates standard Bootstrap 5 form elements as styled in the theme.
  *
- * @package hub-sipco2026
+ * @package cb-coda2026
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

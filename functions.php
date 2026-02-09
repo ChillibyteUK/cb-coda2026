@@ -75,7 +75,7 @@ add_action( 'wp_enqueue_scripts', 'cb_enqueue_theme_js', 20 );
  * Load the child theme's text domain
  */
 function add_child_theme_textdomain() {
-	load_child_theme_textdomain( 'hub-sipco2026', get_stylesheet_directory() . '/languages' );
+	load_child_theme_textdomain( 'cb-coda2026', get_stylesheet_directory() . '/languages' );
 }
 add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
 

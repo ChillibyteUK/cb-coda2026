@@ -2,7 +2,7 @@
 /**
  * Template Name: Page
  *
- * @package hub-sipco2026
+ * @package cb-coda2026
  */
 
 // Exit if accessed directly.

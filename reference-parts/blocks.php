@@ -5,7 +5,7 @@
  * Displays a preview and summary of all registered ACF blocks, including a cleaned-up
  * description extracted from each block template's file doc block.
  *
- * @package hub-sipco2026
+ * @package cb-coda2026
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

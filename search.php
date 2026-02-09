@@ -2,7 +2,7 @@
 /**
  * Template for displaying search results.
  *
- * @package hub-sipco2026
+ * @package cb-coda2026
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -147,8 +147,8 @@ $search_query = get_search_query();
 				the_posts_pagination(
 					array(
 						'mid_size'  => 2,
-						'prev_text' => __( '&laquo; Previous', 'hub-sipco2026' ),
-						'next_text' => __( 'Next &raquo;', 'hub-sipco2026' ),
+						'prev_text' => __( '&laquo; Previous', 'cb-coda2026' ),
+						'next_text' => __( 'Next &raquo;', 'cb-coda2026' ),
 					)
 				);
 				?>

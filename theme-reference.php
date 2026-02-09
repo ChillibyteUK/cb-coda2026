@@ -5,7 +5,7 @@
  * A visual reference page for theme colours, typography, buttons,
  * grid layout, blocks, and utility classes.
  *
- * @package hub-sipco2026
+ * @package cb-coda2026
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

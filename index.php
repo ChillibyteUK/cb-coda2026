@@ -2,7 +2,7 @@
 /**
  * Template for displaying the blog index page.
  *
- * @package hub-sipco2026
+ * @package cb-coda2026
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -31,13 +31,7 @@ get_header();
 			$filtered_content = '';
 
 			foreach ( $blocks as $block ) {
-				if ( isset( $block['blockName'] ) && 'acf/hub-knowledge-pushthrough' === $block['blockName'] ) {
-					// Store the knowledge-pushthrough block for later display.
-					$knowledge_pushthrough_block = $block;
-				} else {
-					// Render other blocks normally.
-					$filtered_content .= render_block( $block );
-				}
+				$filtered_content .= render_block( $block );
 			}
 
 			// Output the filtered page content (excluding knowledge-pushthrough).

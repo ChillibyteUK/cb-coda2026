@@ -2,7 +2,7 @@
 /**
  * Theme colour reference output from _props.scss
  *
- * @package hub-sipco2026
+ * @package cb-coda2026
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

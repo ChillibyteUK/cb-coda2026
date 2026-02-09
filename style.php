@@ -4,7 +4,7 @@
  *
  * This template is used to display the CSS properties defined in the SASS file.
  *
- * @package hub-sipco2026
+ * @package cb-coda2026
  */
 
 if ( ! function_exists( 'wp_kses_post' ) ) {

@@ -4,7 +4,7 @@
  *
  * This file contains theme-specific functions and customizations for the LC Harrier 2025 theme.
  *
- * @package hub-sipco2026
+ * @package cb-coda2026
  */
 
 // Exit if accessed directly.
@@ -142,9 +142,9 @@ function widgets_init() {
 
     register_nav_menus(
         array(
-            'primary_nav'  => __( 'Primary Nav', 'hub-sipco2026' ),
-            'footer_menu1' => __( 'Footer Nav 1', 'hub-sipco2026' ),
-            'footer_menu2' => __( 'Footer Nav 2', 'hub-sipco2026' ),
+            'primary_nav'  => __( 'Primary Nav', 'cb-coda2026' ),
+            'footer_menu1' => __( 'Footer Nav 1', 'cb-coda2026' ),
+            'footer_menu2' => __( 'Footer Nav 2', 'cb-coda2026' ),
         )
     );
 

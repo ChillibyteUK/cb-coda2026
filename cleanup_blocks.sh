@@ -15,9 +15,9 @@ if [ ! -d "$acf_json_dir" ]; then
   exit 1
 fi
 
-# Get list of block slugs from ACF JSON files (group_hub_*.json)
+# Get list of block slugs from ACF JSON files (group_cb_*.json)
 echo "Scanning ACF JSON files..."
-mapfile -t acf_blocks < <(ls "$acf_json_dir"/group_hub_*.json 2>/dev/null | xargs -n 1 basename | sed 's/^group_//' | sed 's/\.json$//')
+mapfile -t acf_blocks < <(ls "$acf_json_dir"/group_cb_*.json 2>/dev/null | xargs -n 1 basename | sed 's/^group_//' | sed 's/\.json$//')
 
 if [ ${#acf_blocks[@]} -eq 0 ]; then
   echo "No ACF JSON files found"

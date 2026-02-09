@@ -4,7 +4,7 @@
  *
  * This file defines and registers custom taxonomies such as 'Teams' and 'Offices'.
  *
- * @package hub-sipco2026
+ * @package cb-coda2026
  */
 
 /**
@@ -51,4 +51,4 @@ function cb_register_taxes() {
     register_taxonomy( 'department', array( 'person' ), $args );
 
 }
-add_action( 'init', 'cb_register_taxes' );
+// add_action( 'init', 'cb_register_taxes' );

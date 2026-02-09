@@ -2,7 +2,7 @@
 /**
  * Template for displaying the blog index page.
  *
- * @package hub-sipco2026
+ * @package cb-coda2026
  */
 
 defined( 'ABSPATH' ) || exit;
