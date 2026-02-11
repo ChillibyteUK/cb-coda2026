@@ -12,15 +12,15 @@ $page_for_posts = get_option( 'page_for_posts' );
 get_header();
 ?>
 <main id="main" class="news-insights">
-	<section id="<?php echo esc_attr( $block_id ); ?>" class="news-hero has-primary-black-background-color pt-5">
+	<section id="<?php echo esc_attr( $block_id ); ?>" class="news-hero pt-5">
 		<h1 class="mt-5">
 			<div class="id-container px-4 px-md-5 pt-1">
-				News, insights, and perspectives
+				Insights &amp; perspectives
 			</div>
 		</h1>
 		<h2>
 			<div class="id-container px-4 px-md-5 pt-2">
-				Creating news and leading conversations that shape our industry	
+				Experience changes everything. Here's how we're shaping what's next.
 			</div>
 		</h2>
 		<div class="row">
@@ -37,13 +37,7 @@ get_header();
 			</div>
 		</div>
 	</section>
-	<section class="insight-type has-primary-black-background-color">
-		<a class="insight-type__header" href="/news/category/insights/">
-			<div class="id-container d-flex align-items-center justify-content-between px-4 px-md-5">
-				<div>Insights</div>
-				<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/arrow-wh.svg' ); ?>" width=65 height=60 alt="" class="cb-services-nav__item-icon" />
-			</div>
-		</a>
+	<section class="insight-type">
 		<div class="insight-type-grid grid-type-1 id-container py-5 px-4 px-md-5">
 			<div class="row g-5">
 			<?php
@@ -118,7 +112,7 @@ get_header();
 	// include cta template.
 	$cta = get_field( 'insight_cta', 'option' );
 	set_query_var( 'cta_choice', $cta );
-	get_template_part( 'blocks/cb-cta/cb-cta' );
+	get_template_part( 'blocks/cb-cta' );
 
 	?>
 </main>
