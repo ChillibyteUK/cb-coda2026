@@ -11735,39 +11735,6 @@ header:has(.navbar-collapse.collapse.show) {
   text-decoration: none;
 }
 
-.insight-type {
-  border-bottom: 1px solid var(--col-lime-1000);
-}
-.insight-type__header {
-  border-top: 1px solid var(--col-lime-1000);
-  border-bottom: 1px solid var(--col-lime-1000);
-  display: block;
-  position: relative;
-  background-color: var(--col-white);
-  isolation: isolate;
-  overflow: hidden;
-  color: var(--col-primary-black);
-  font-size: var(--fs-800);
-  font-weight: var(--fw-light);
-  text-decoration: none;
-  padding-block: 1rem;
-  line-height: 1;
-}
-.insight-type__header:hover {
-  color: var(--col-white);
-  text-decoration: none;
-}
-.insight-type__header::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  background: url("../blocks/cb-work-index/bg180.webp") center/cover no-repeat fixed;
-}
-
 .news-insights {
   background-color: var(--col-white);
 }
