@@ -57,7 +57,7 @@ h1,
   font-size: var(--fs-700);
   line-height: 1;
   letter-spacing: -0.01em;
-  text-wrap: balance;
+  // text-wrap: balance;
   margin-bottom: 0;
 }
 h2,
@@ -67,14 +67,14 @@ h2,
   font-weight: var(--fw-light);
   line-height: 1.1;
   letter-spacing: -0.005em;
-  text-wrap: balance;
+  // text-wrap: balance;
 }
 h3,
 .h3 {
   font-family: var(--ff-body);
   font-size: var(--fs-h3-page-subtitle);
   line-height: 1.2;
-  text-wrap: balance;
+  // text-wrap: balance;
 }
 h4,
 .h4 {
@@ -82,7 +82,7 @@ h4,
   font-size: var(--fs-h4-body-bold);
   line-height: var(--lh-h4-body-bold);
   font-weight: var(--fw-bold);
-  text-wrap: balance;
+  // text-wrap: balance;
 }
 
 // Button text

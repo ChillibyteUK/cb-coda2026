@@ -1,0 +1,19 @@
+.cb-details {
+  &__item:not(:first-child) {
+    border-top: 1px solid var(--col-lime-1000);
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    .cb-details__title {
+      font-size: var(--fs-500);
+      color: var(--col-neutral-700);
+    }
+  }
+  &__item:first-child {
+    padding-bottom: 4rem;
+    color: var(--col-lime-1000);
+    .cb-details__title {
+      font-size: var(--fs-600);
+      color: var(--col-lime-1000);
+    }
+  }
+}
