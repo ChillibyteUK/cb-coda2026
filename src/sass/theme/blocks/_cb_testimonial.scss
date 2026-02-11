@@ -1,0 +1,87 @@
+/**
+ * CB Testimonial Block Styles
+ *
+ * @package  cb-identity2025
+ */
+
+.cb-testimonial {
+  padding-block: 3rem;
+
+  .cb-testimonial__quote {
+    font-size: var(--fs-900);
+    font-weight: var(--fw-light);
+    margin-bottom: 0.5em;
+  }
+  .cb-testimonial__author {
+    display: inline-block;
+    padding: 0.5em 0.5em 0.25em 0.5em;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    font-size: var(--fs-800);
+    font-weight: var(--fw-regular);
+  }
+  .cb-testimonial__company {
+    display: inline-block;
+    padding: 0.5em 0.5em 0.25em 0.5em;
+    line-height: 1;
+    font-size: var(--fs-800);
+    font-weight: var(--fw-regular);
+  }
+
+  &.has-neutral-300-background-color {
+    .cb-testimonial__quote {
+      color: var(--col-primary-black);
+    }
+    .cb-testimonial__author {
+      color: var(--col-lime-1100);
+      background-color: var(--col-white);
+    }
+    .cb-testimonial__company {
+      color: var(--col-lime-1100);
+      background-color: var(--col-lime-200);
+    }
+  }
+
+  &.has-lime-600-background-color {
+    .cb-testimonial__quote {
+      color: var(--col-primary-black);
+    }
+    .cb-testimonial__author {
+      color: var(--col-lime-1100);
+      background-color: var(--col-white);
+    }
+    .cb-testimonial__company {
+      color: var(--col-lime-1100);
+      background-color: var(--col-lime-200);
+    }
+  }
+
+  &.has-primary-black-background-color {
+    .cb-testimonial__quote {
+      color: var(--col-white);
+    }
+    .cb-testimonial__author {
+      color: var(--col-primary-black);
+      background-color: var(--col-lime-200);
+    }
+    .cb-testimonial__company {
+      color: var(--col-primary-black);
+      background-color: var(--col-lime-600);
+    }
+  }
+
+  &.has-white-background-color {
+    .cb-testimonial__quote {
+      color: var(--col-primary-black);
+    }
+    .cb-testimonial__author {
+      color: var(--col-white);
+      background-color: var(--col-lime-900);
+    }
+    .cb-testimonial__company {
+      color: var(--col-lime-1100);
+      background-color: var(--col-lime-300);
+    }
+  }
+}

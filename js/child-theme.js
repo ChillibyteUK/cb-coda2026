@@ -6867,328 +6867,320 @@
 	  }
 	})();
 
-	// Add your custom JS here.
+	var customJavascript = {};
 
-	// Modern scroll animations using Intersection Observer
-	(function () {
-	  // Check for reduced motion preference
-	  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-	  if (prefersReducedMotion) {
-	    // If user prefers reduced motion, make all elements immediately visible
-	    document.querySelectorAll('[data-aos]').forEach(el => {
-	      el.style.opacity = '1';
-	      el.style.transform = 'none';
-	    });
-	    return;
-	  }
-	  const observer = new IntersectionObserver(entries => {
-	    entries.forEach(entry => {
-	      if (entry.isIntersecting) {
-	        entry.target.classList.add('aos-animate');
-	        // Once animated, stop observing (animate once)
-	        observer.unobserve(entry.target);
-	      }
-	    });
-	  }, {
-	    threshold: 0.1,
-	    rootMargin: '0px'
-	  });
+	var hasRequiredCustomJavascript;
 
-	  // Observe all elements with data-aos attribute
-	  document.addEventListener('DOMContentLoaded', () => {
-	    document.querySelectorAll('[data-aos]').forEach(el => {
-	      observer.observe(el);
-	    });
-	  });
-	})();
-	document.querySelectorAll('.hub-team__grid').forEach(grid => {
-	  let openDetail = null;
-	  let openCard = null;
-	  function closeDetail(animated = true) {
-	    if (!openDetail) return;
-	    if (animated) {
-	      openDetail.classList.add('fade-out');
-	      openDetail.addEventListener('animationend', () => {
-	        if (openDetail) openDetail.remove();
-	        openDetail = null;
-	      }, {
-	        once: true
-	      });
-	    } else {
-	      openDetail.remove();
-	      openDetail = null;
-	    }
-	    if (openCard) openCard.classList.remove('active');
-	    if (openCard) openCard.setAttribute('aria-expanded', 'false');
-	    grid.classList.remove('has-detail');
-	    openCard = null;
-	  }
-	  grid.addEventListener('click', e => {
-	    const card = e.target.closest('.hub-team__card');
-	    if (!card) return;
+	function requireCustomJavascript () {
+		if (hasRequiredCustomJavascript) return customJavascript;
+		hasRequiredCustomJavascript = 1;
+		// Add your custom JS here.
+		AOS.init({
+		  easing: "ease-out",
+		  once: true,
+		  duration: 600
+		});
 
-	    // toggle off if clicking same card again
-	    if (openCard === card) {
-	      closeDetail();
-	      return;
-	    }
+		// Add background to navbar on scroll
+		(function () {
+		  var navbar = document.getElementById("wrapper-navbar");
+		  var addNavbarBackground = function () {
+		    if (window.scrollY > 50) {
+		      navbar.classList.add("scrolled");
+		    } else {
+		      navbar.classList.remove("scrolled");
+		    }
+		  };
+		  window.addEventListener("scroll", addNavbarBackground);
+		})();
 
-	    // clear previous detail
-	    closeDetail(false);
+		// header logo clip animation
+		(function () {
+		  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+		    // Don't animate — ensure fully visible
+		    const _clip_rm = document.getElementById("site-logo-clip");
+		    if (_clip_rm && _clip_rm.style && typeof _clip_rm.style.setProperty === "function") {
+		      _clip_rm.style.setProperty("--logo-final-offset", "0px");
+		    } else {
+		      document.documentElement.style.setProperty("--logo-final-offset", "0px");
+		    }
+		    _clip_rm?.classList.add("animate");
+		    return;
+		  }
 
-	    // Find the detail-content sibling (now outside the button)
-	    const detailId = card.getAttribute('aria-controls');
-	    const hidden = detailId ? document.getElementById(detailId) : card.nextElementSibling;
-	    if (!hidden || !hidden.classList.contains('detail-content')) {
-	      console.error('detail-content not found');
-	      return;
-	    }
-	    const detail = document.createElement('div');
-	    detail.className = 'detail';
-	    detail.innerHTML = hidden.innerHTML;
+		  // compute and apply pixel offset based on the bars group's bbox.
+		  function computeOffset() {
+		    const clip = document.getElementById("site-logo-clip");
+		    const svg = clip && clip.querySelector ? clip.querySelector("svg") : null;
+		    if (!clip || !svg) return;
+		    const leftGroup = svg.getElementById ? svg.getElementById("logo-bars") : svg.querySelector("#logo-bars");
+		    // fallback: try the first nested <g> if no id present
+		    const group = leftGroup || svg.querySelector("g > g");
+		    let viewBoxWidth = 0;
+		    if (svg.viewBox && svg.viewBox.baseVal && svg.viewBox.baseVal.width) {
+		      viewBoxWidth = svg.viewBox.baseVal.width;
+		    } else {
+		      const vb = svg.getAttribute("viewBox");
+		      if (vb) viewBoxWidth = parseFloat(vb.split(" ")[2]) || 0;
+		    }
+		    if (!viewBoxWidth || !group || typeof group.getBBox !== "function") {
+		      const _clip = document.getElementById("site-logo-clip");
+		      if (_clip && _clip.style && typeof _clip.style.setProperty === "function") {
+		        _clip.style.setProperty("--logo-final-offset", "0px");
+		      } else {
+		        document.documentElement.style.setProperty("--logo-final-offset", "0px");
+		      }
+		      return;
+		    }
+		    const bbox = group.getBBox();
+		    const visibleSvgUnits = bbox.x + bbox.width;
+		    const svgRect = svg.getBoundingClientRect();
+		    const svgDisplayWidth = svgRect.width || 0;
+		    const offsetPx = visibleSvgUnits / viewBoxWidth * svgDisplayWidth;
+		    const safeOffset = Math.ceil(offsetPx + 1);
+		    const _clip = document.getElementById("site-logo-clip");
+		    if (_clip && _clip.style && typeof _clip.style.setProperty === "function") {
+		      _clip.style.setProperty("--logo-final-offset", `-${safeOffset}px`);
+		    } else {
+		      document.documentElement.style.setProperty("--logo-final-offset", `-${safeOffset}px`);
+		    }
+		  }
+		  function initLogoClip() {
+		    const clip = document.getElementById("site-logo-clip");
+		    if (!clip) return;
+		    computeOffset();
+		    // trigger paint then animate back to 0 (reveal the bars)
+		    requestAnimationFrame(() => {
+		      setTimeout(() => clip.classList.add("animate"), 60);
+		    });
+		  }
 
-	    // insert after the correct row
-	    const cards = Array.from(grid.children).filter(el => el.classList.contains('hub-team__card'));
-	    const index = cards.indexOf(card);
-	    const cols = getComputedStyle(grid).gridTemplateColumns.split(' ').length;
-	    const rowEnd = Math.ceil((index + 1) / cols) * cols - 1;
-	    const insertAfter = cards[Math.min(rowEnd, cards.length - 1)];
+		  // Initialize on DOM ready
+		  if (document.readyState === "loading") {
+		    document.addEventListener("DOMContentLoaded", initLogoClip);
+		  } else {
+		    initLogoClip();
+		  }
 
-	    // Find the detail-content element after insertAfter card
-	    let insertPoint = insertAfter;
-	    if (insertAfter.nextElementSibling && insertAfter.nextElementSibling.classList.contains('detail-content')) {
-	      insertPoint = insertAfter.nextElementSibling;
-	    }
-	    insertPoint.insertAdjacentElement('afterend', detail);
+		  // Single debounced resize listener (does not reattach on each run)
+		  let rTO = null;
+		  window.addEventListener("resize", function () {
+		    clearTimeout(rTO);
+		    rTO = setTimeout(function () {
+		      const clip = document.getElementById("site-logo-clip");
+		      if (!clip) return;
+		      clip.classList.remove("animate");
+		      // recompute and retrigger
+		      computeOffset();
+		      void clip.offsetWidth;
+		      requestAnimationFrame(() => setTimeout(() => clip.classList.add("animate"), 60));
+		    }, 150);
+		  });
+		})();
 
-	    // mark active states
-	    card.classList.add('active');
-	    card.setAttribute('aria-expanded', 'true');
-	    grid.classList.add('has-detail');
-	    openDetail = detail;
-	    openCard = card;
-	  });
+		// footer logo animation
+		(function () {
+		  const clip = document.getElementById("footer-logo-clip");
+		  const inner = document.getElementById("footer-logo-inner");
+		  const svg = document.getElementById("footer-logo-svg");
+		  if (!clip || !inner || !svg) return;
+		  const prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+		  let triggered = false;
 
-	  // Keyboard support for team cards
-	  grid.addEventListener('keydown', e => {
-	    const card = e.target.closest('.hub-team__card');
-	    if (!card) return;
+		  // Ensure initial visual state shows the three bars (left half) on load
+		  // Make clip fill container and inner be 200% width, sitting at translateX(0)
+		  clip.style.width = "100%";
+		  inner.style.width = "200%";
+		  inner.style.transform = "translateX(0)";
+		  // disable any transition until animated explicitly
+		  inner.style.transition = "none";
+		  function prepareAndAnimate() {
+		    // Make clip fill the container width
+		    clip.style.width = "100%";
+		    // Ensure inner uses left origin so translating reveals the right half
+		    inner.style.transformOrigin = "left center";
 
-	    // Enter or Space to toggle
-	    if (e.key === 'Enter' || e.key === ' ') {
-	      e.preventDefault();
-	      card.click();
-	    }
-	    // Escape to close
-	    else if (e.key === 'Escape' && openCard === card) {
-	      e.preventDefault();
-	      closeDetail();
-	    }
-	  });
+		    // Make inner element 200% width so its left-half fills the clip initially
+		    inner.style.width = "200%";
+		    inner.style.display = "block";
+		    inner.style.transform = "translateX(0)";
 
-	  // click outside to close
-	  document.addEventListener('click', e => {
-	    if (openDetail && !grid.contains(e.target)) {
-	      closeDetail();
-	    }
-	  });
+		    // If user prefers reduced motion, jump to final state (fully revealed)
+		    if (prefersReduced) {
+		      inner.style.transform = "translateX(-50%)";
+		      return;
+		    }
 
-	  // close detail on resize
-	  window.addEventListener('resize', () => {
-	    closeDetail(false);
-	  });
-	});
+		    // Animate to final state: move left by 50% of inner width (revealing right half)
+		    // Use a slightly slower duration and a smoother easing
+		    const animDuration = 1.6; // seconds
+		    const gsapEase = "power3.out";
+		    if (window.gsap && typeof window.gsap.to === "function") {
+		      window.gsap.to(inner, {
+		        xPercent: -50,
+		        duration: animDuration,
+		        ease: gsapEase
+		      });
+		    } else {
+		      // Fallback: animate via CSS transition with similar easing
+		      inner.style.transition = "transform " + animDuration + "s cubic-bezier(.22,.9,.32,1)";
+		      requestAnimationFrame(() => {
+		        inner.style.transform = "translateX(-50%)";
+		      });
+		    }
+		  }
+		  const observer = new IntersectionObserver((entries, obs) => {
+		    entries.forEach(entry => {
+		      if (triggered) return;
+		      if (entry.isIntersecting && entry.intersectionRatio >= 0.1) {
+		        triggered = true;
+		        prepareAndAnimate();
+		        obs.disconnect();
+		      }
+		    });
+		  }, {
+		    rootMargin: "0px 0px -10px 0px",
+		    threshold: [0]
+		  });
 
-	// Back to top button functionality
-	(function () {
-	  // Create the back to top button
-	  const backToTopBtn = document.createElement('button');
-	  backToTopBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>';
-	  backToTopBtn.className = 'back-to-top';
-	  backToTopBtn.setAttribute('aria-label', 'Back to top');
-	  backToTopBtn.style.cssText = `
-        position: fixed;
-        bottom: 2rem;
-        right: 2rem;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background-color: var(--col-light-gold);
-        color: var(--col-simco-gold);
-        border: none;
-        cursor: pointer;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 1000;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.8rem;
-    `;
+		  // Prefer the colophon as the trigger element (fires when its bottom enters viewport)
+		  const triggerEl = document.querySelector(".footer__colophon") || document.querySelector(".footer__logo") || clip;
+		  if (triggerEl) observer.observe(triggerEl);
 
-	  // Add hover effects
-	  backToTopBtn.addEventListener('mouseenter', () => {
-	    backToTopBtn.style.transform = 'translateY(-2px)';
-	    backToTopBtn.style.boxShadow = '0 6px 20px rgba(0,0,0,0.2)';
-	  });
-	  backToTopBtn.addEventListener('mouseleave', () => {
-	    backToTopBtn.style.transform = 'translateY(0)';
-	    backToTopBtn.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
-	  });
+		  // If window resizes before animation triggered, ensure inner stays 200% width
+		  let resizeTimer = null;
+		  window.addEventListener("resize", () => {
+		    if (triggered) return; // no need after animation
+		    clearTimeout(resizeTimer);
+		    resizeTimer = setTimeout(() => {
+		      clip.style.width = "100%";
+		      inner.style.width = "200%";
+		    }, 120);
+		  });
+		})();
 
-	  // Add click handler to scroll to top
-	  backToTopBtn.addEventListener('click', () => {
-	    // Try to scroll to #top element first, fallback to top of page
-	    const topElement = document.getElementById('top');
-	    if (topElement) {
-	      topElement.scrollIntoView({
-	        behavior: 'smooth'
-	      });
-	    } else {
-	      window.scrollTo({
-	        top: 0,
-	        behavior: 'smooth'
-	      });
-	    }
-	  });
+		// (function() {
+		//   // Hide header on scroll
+		//   var doc = document.documentElement;
+		//   var w = window;
 
-	  // Append to body
-	  document.body.appendChild(backToTopBtn);
+		//   var prevScroll = w.scrollY || doc.scrollTop;
+		//   var curScroll;
+		//   var direction = 0;
+		//   var prevDirection = 0;
 
-	  // Show/hide button based on scroll position
-	  function toggleBackToTop() {
-	    const scrolled = window.scrollY;
-	    const viewportHeight = window.innerHeight;
-	    if (scrolled > viewportHeight) {
-	      backToTopBtn.style.opacity = '1';
-	      backToTopBtn.style.visibility = 'visible';
-	    } else {
-	      backToTopBtn.style.opacity = '0';
-	      backToTopBtn.style.visibility = 'hidden';
-	    }
-	  }
+		//   var header = document.getElementById('wrapper-navbar');
 
-	  // Listen for scroll events
-	  window.addEventListener('scroll', toggleBackToTop);
+		//   var checkScroll = function() {
+		//       // Find the direction of scroll (0 - initial, 1 - up, 2 - down)
+		//       curScroll = w.scrollY || doc.scrollTop;
+		//       if (curScroll > prevScroll) {
+		//           // Scrolled down
+		//           direction = 2;
 
-	  // Check initial scroll position
-	  toggleBackToTop();
-	})();
+		// Equalize image heights per multi-module row in content grid.
+		(function () {
+		  function syncRow(row) {
+		    const covers = row.querySelectorAll(".img-cover");
+		    if (!covers || covers.length < 2) return;
+		    row.classList.remove("content-grid-row-sync");
+		    let maxHeight = 0;
+		    covers.forEach(cover => {
+		      cover.style.height = "auto";
+		    });
+		    covers.forEach(cover => {
+		      const rect = cover.getBoundingClientRect();
+		      if (rect.height > maxHeight) maxHeight = rect.height;
+		    });
+		    if (maxHeight > 0) {
+		      covers.forEach(cover => {
+		        cover.style.height = `${Math.ceil(maxHeight)}px`;
+		      });
+		      row.classList.add("content-grid-row-sync");
+		    } else {
+		      covers.forEach(cover => {
+		        cover.style.height = "";
+		      });
+		      row.classList.remove("content-grid-row-sync");
+		    }
+		  }
+		  function syncAll() {
+		    const rows = document.querySelectorAll(".content-grid .row");
+		    rows.forEach(syncRow);
+		  }
+		  function init() {
+		    syncAll();
+		    const imgs = document.querySelectorAll(".content-grid .img-cover img");
+		    imgs.forEach(img => {
+		      if (img.complete) return;
+		      img.addEventListener("load", syncAll, {
+		        once: true
+		      });
+		    });
+		  }
+		  if (document.readyState === "loading") {
+		    document.addEventListener("DOMContentLoaded", init);
+		  } else {
+		    init();
+		  }
+		  let resizeTimer = null;
+		  window.addEventListener("resize", () => {
+		    clearTimeout(resizeTimer);
+		    resizeTimer = setTimeout(syncAll, 150);
+		  });
+		})();
+		//       } else if (curScroll < prevScroll) {
+		//           // Scrolled up
+		//           direction = 1;
+		//       }
 
-	// Highlight search term from URL parameter
-	(function () {
-	  const urlParams = new URLSearchParams(window.location.search);
-	  const searchTerm = urlParams.get('highlight');
-	  if (searchTerm) {
-	    highlightText(searchTerm);
-	  }
-	  function highlightText(searchTerm) {
-	    const content = document.querySelector('main');
-	    if (!content) return;
-	    const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT, {
-	      acceptNode: function (node) {
-	        // Skip script and style elements
-	        if (node.parentElement.tagName === 'SCRIPT' || node.parentElement.tagName === 'STYLE' || node.parentElement.classList.contains('search-result-item')) {
-	          return NodeFilter.FILTER_REJECT;
-	        }
-	        return NodeFilter.FILTER_ACCEPT;
-	      }
-	    });
-	    const nodesToReplace = [];
-	    let node;
-	    while (node = walker.nextNode()) {
-	      const text = node.nodeValue;
-	      const regex = new RegExp(searchTerm, 'gi');
-	      if (regex.test(text)) {
-	        nodesToReplace.push(node);
-	      }
-	    }
-	    nodesToReplace.forEach(node => {
-	      const text = node.nodeValue;
-	      const regex = new RegExp('(' + searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
-	      const parent = node.parentElement;
-	      const fragment = document.createDocumentFragment();
-	      let lastIndex = 0;
-	      text.replace(regex, function (match, p1, offset) {
-	        if (offset > lastIndex) {
-	          fragment.appendChild(document.createTextNode(text.slice(lastIndex, offset)));
-	        }
-	        const mark = document.createElement('mark');
-	        mark.textContent = match;
-	        mark.style.backgroundColor = '#AB965F';
-	        mark.style.color = '#fff';
-	        mark.style.padding = '2px 4px';
-	        fragment.appendChild(mark);
-	        lastIndex = offset + match.length;
-	      });
-	      if (lastIndex < text.length) {
-	        fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
-	      }
-	      parent.replaceChild(fragment, node);
-	    });
+		//       if (direction !== prevDirection) {
+		//           toggleHeader(direction, curScroll);
+		//       }
 
-	    // Scroll to first highlight
-	    const firstMark = content.querySelector('mark');
-	    if (firstMark) {
-	      firstMark.scrollIntoView({
-	        behavior: 'smooth',
-	        block: 'center'
-	      });
-	    }
-	  }
-	})();
+		//       prevScroll = curScroll;
+		//   };
 
-	// Hamburger menu animation - toggle aria-expanded for offcanvas
-	(function () {
-	  const offcanvasElement = document.getElementById('offcanvasNavbar');
-	  const togglerButton = document.querySelector('[data-bs-toggle="offcanvas"]');
-	  if (offcanvasElement && togglerButton) {
-	    offcanvasElement.addEventListener('show.bs.offcanvas', function () {
-	      togglerButton.setAttribute('aria-expanded', 'true');
-	    });
-	    offcanvasElement.addEventListener('hide.bs.offcanvas', function () {
-	      togglerButton.setAttribute('aria-expanded', 'false');
-	    });
+		//   var toggleHeader = function(direction, curScroll) {
+		//       if (direction === 2 && curScroll > 125) {
+		//           // Replace 52 with the height of your header in px
+		//           if (!document.getElementById('navbar').classList.contains('show')) {
+		//               header.classList.add('hide');
+		//               prevDirection = direction;
+		//           }
+		//       } else if (direction === 1) {
+		//           header.classList.remove('hide');
+		//           prevDirection = direction;
+		//       }
+		//   };
 
-	    // Fix duplicate IDs - add 'mobile-' prefix to all IDs in mobile menu
-	    const mobileMenu = offcanvasElement.querySelector('#mobile-menu');
-	    if (mobileMenu) {
-	      const elementsWithId = mobileMenu.querySelectorAll('[id]');
-	      elementsWithId.forEach(function (element) {
-	        const oldId = element.id;
-	        const newId = 'mobile-' + oldId;
-	        element.id = newId;
+		//   window.addEventListener('scroll', checkScroll);
+		// }
+		// )();
 
-	        // Update aria-labelledby references
-	        const labelledByElements = mobileMenu.querySelectorAll('[aria-labelledby="' + oldId + '"]');
-	        labelledByElements.forEach(function (el) {
-	          el.setAttribute('aria-labelledby', newId);
-	        });
-	      });
+		/*
 
-	      // Handle dropdown toggle behavior - close other dropdowns when opening one
-	      const dropdownToggles = mobileMenu.querySelectorAll('[data-bs-toggle="dropdown"]');
-	      dropdownToggles.forEach(function (toggle) {
-	        toggle.addEventListener('show.bs.dropdown', function (e) {
-	          // Close all other open dropdowns
-	          dropdownToggles.forEach(function (otherToggle) {
-	            if (otherToggle !== toggle && otherToggle.classList.contains('show')) {
-	              const otherDropdown = bootstrap.Dropdown.getInstance(otherToggle);
-	              if (otherDropdown) {
-	                otherDropdown.hide();
-	              }
-	            }
-	          });
-	        });
+		  // Header background
+		  document.addEventListener('scroll', function() {
+		      var nav = document.getElementById('navbar');
+		    //   var primaryNav = document.getElementById('primaryNav');
+		    //   if (!primaryNav.classList.contains('show')) {
+		    //       nav.classList.toggle('scrolled', window.scrollY > nav.offsetHeight);
+		    //   }
+		      document.querySelectorAll('.dropdown-menu').forEach(function(dropdown) {
+		          dropdown.classList.remove('show');
+		      });
+		      document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+		          toggle.classList.remove('show');
+		          toggle.blur();
+		      });
+		  });
 
-	        // Prevent dropdown from closing when clicking items inside it
-	        toggle.setAttribute('data-bs-auto-close', 'false');
-	      });
-	    }
-	  }
-	})();
+		*/
+		return customJavascript;
+	}
+
+	requireCustomJavascript();
 
 	exports.Alert = Alert;
 	exports.Button = button;

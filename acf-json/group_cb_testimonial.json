@@ -1,0 +1,114 @@
+{
+  "key": "group_cb_testimonial",
+  "title": "CB Testimonial",
+  "fields": [
+    {
+      "key": "field_cb_testimonial_title",
+      "label": "CB Testimonial",
+      "name": "title",
+      "type": "message"
+    },
+    {
+      "key": "field_6900be36c6574",
+      "label": "Style",
+      "name": "style",
+      "aria-label": "",
+      "type": "radio",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "has-lime-600-background-color": "Lime",
+        "has-primary-black-background-color": "Black",
+        "has-neutral-300-background-color": "Neutral",
+        "has-white-background-color": "White"
+      },
+      "default_value": "",
+      "return_format": "value",
+      "allow_null": 0,
+      "other_choice": 0,
+      "allow_in_bindings": 0,
+      "layout": "horizontal",
+      "save_other_choice": 0
+    },
+    {
+      "key": "field_68ff960b4df49",
+      "label": "Quote",
+      "name": "quote",
+      "aria-label": "",
+      "type": "textarea",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "allow_in_bindings": 0,
+      "rows": 2,
+      "placeholder": "",
+      "new_lines": "br"
+    },
+    {
+      "key": "field_68ff96114df4a",
+      "label": "Author",
+      "name": "author",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "allow_in_bindings": 0,
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_68ff96164df4b",
+      "label": "Role, Company",
+      "name": "company",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "allow_in_bindings": 0,
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/cb-testimonial"
+      }
+    ]
+  ],
+  "active": 1,
+  "description": ""
+}

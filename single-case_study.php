@@ -1,0 +1,27 @@
+<?php
+/**
+ * Template for displaying single posts.
+ *
+ * @package cb-identity2025
+ */
+
+defined( 'ABSPATH' ) || exit;
+get_header();
+
+?>
+<main id="main" class="case-study">
+	<div class="has-lime-1000-border-top has-lime-1000-border-bottom mt-4">
+		<div class="id-container px-4 px-md-5 fs-800 has-lime-1100-color lh-tightest pt-2 pb-1">Our work</div>
+	</div>
+	<div class="has-lime-1000-border-bottom mb-4">
+		<div class="id-container px-4 px-md-5">
+			<h1 class="fw-light has-neutral-700-color fs-500 lh-tightest pt-2 pb-1"><?= get_the_title(); ?></h1>
+		</div>
+	</div>
+    <?php
+    the_content();
+    ?>
+</main>
+<?php
+get_footer();
+?>

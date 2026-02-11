@@ -2,7 +2,7 @@
 /**
  * Custom taxonomies for the Hub simco theme.
  *
- * This file defines and registers custom taxonomies such as 'Teams' and 'Offices'.
+ * This file defines and registers custom taxonomies such as 'Services', 'Themes', and 'Regions'.
  *
  * @package cb-coda2026
  */
@@ -16,8 +16,8 @@ function cb_register_taxes() {
 
     $args = array(
         'labels'             => array(
-            'name'          => 'Teams',
-            'singular_name' => 'Team',
+            'name'          => 'Services',
+            'singular_name' => 'Service',
         ),
         'public'             => true,
         'publicly_queryable' => true,
@@ -30,25 +30,42 @@ function cb_register_taxes() {
         'show_in_rest'       => true,
         'rewrite'            => false,
     );
-    register_taxonomy( 'team', array( 'person' ), $args );
+    register_taxonomy( 'service', array( 'case_study', 'post' ), $args );
 
-	$args = array(
-        'labels'             => array(
-            'name'          => 'Departments',
-            'singular_name' => 'Department',
-        ),
-        'public'             => true,
-        'publicly_queryable' => true,
-        'hierarchical'       => true,
-        'show_ui'            => true,
-        'show_in_nav_menus'  => true,
-        'show_tagcloud'      => false,
-        'show_in_quick_edit' => true,
-        'show_admin_column'  => true,
-        'show_in_rest'       => true,
-        'rewrite'            => false,
-    );
-    register_taxonomy( 'department', array( 'person' ), $args );
+	// $args = array(
+    //     'labels'             => array(
+    //         'name'          => 'Themes',
+    //         'singular_name' => 'Theme',
+    //     ),
+    //     'public'             => true,
+    //     'publicly_queryable' => true,
+    //     'hierarchical'       => true,
+    //     'show_ui'            => true,
+    //     'show_in_nav_menus'  => true,
+    //     'show_tagcloud'      => false,
+    //     'show_in_quick_edit' => true,
+    //     'show_admin_column'  => true,
+    //     'show_in_rest'       => true,
+    //     'rewrite'            => false,
+    // );
+    // register_taxonomy( 'theme', array( 'case_study', 'post' ), $args );
 
+    // $args = array(
+    //     'labels'             => array(
+    //         'name'          => 'Regions',
+    //         'singular_name' => 'Region',
+    //     ),
+    //     'public'             => true,
+    //     'publicly_queryable' => true,
+    //     'hierarchical'       => true,
+    //     'show_ui'            => true,
+    //     'show_in_nav_menus'  => true,
+    //     'show_tagcloud'      => false,
+    //     'show_in_quick_edit' => true,
+    //     'show_admin_column'  => true,
+    //     'show_in_rest'       => true,
+    //     'rewrite'            => false,
+    // );
+    // register_taxonomy( 'region', array( 'case_study', 'post' ), $args );
 }
-// add_action( 'init', 'cb_register_taxes' );
+add_action( 'init', 'cb_register_taxes' );

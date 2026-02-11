@@ -77,48 +77,6 @@ function remove_understrap_post_formats() {
     remove_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 }
 add_action( 'after_setup_theme', 'remove_understrap_post_formats', 11 );
-/**
- * Enqueue team filter script.
- */
-add_action(
-    'wp_enqueue_scripts',
-    function () {
-        $rel = '/js/team-filter.js';
-        $abs = get_stylesheet_directory() . $rel;
-        if ( file_exists( $abs ) ) {
-            wp_enqueue_script(
-                'hub-team-filter',
-                get_stylesheet_directory_uri() . $rel,
-                array(),
-                filemtime( $abs ),
-                true
-            );
-        }
-    },
-    20
-);
-
-/**
- * Enqueue accordion scroll script.
- */
-add_action(
-    'wp_enqueue_scripts',
-    function () {
-        $rel = '/js/accordion-scroll.js';
-        $abs = get_stylesheet_directory() . $rel;
-        if ( file_exists( $abs ) ) {
-            wp_enqueue_script(
-                'hub-accordion-scroll',
-                get_stylesheet_directory_uri() . $rel,
-                array(),
-                filemtime( $abs ),
-                true
-            );
-        }
-    },
-    20
-);
-
 
 
 if ( function_exists( 'acf_add_options_page' ) ) {
@@ -142,9 +100,13 @@ function widgets_init() {
 
     register_nav_menus(
         array(
-            'primary_nav'  => __( 'Primary Nav', 'cb-coda2026' ),
-            'footer_menu1' => __( 'Footer Nav 1', 'cb-coda2026' ),
-            'footer_menu2' => __( 'Footer Nav 2', 'cb-coda2026' ),
+            'primary_nav'          => 'Primary Nav',
+            'footer_menu_services' => 'Footer Services',
+            'footer_menu_about'    => 'Footer About',
+            'footer_menu_identity' => 'Footer Identity',
+            'footer_menu_legal'    => 'Footer Legal & Info',
+            'footer_menu_media'    => 'Footer Media',
+            'footer_menu_global'   => 'Footer Global',
         )
     );
 
@@ -198,6 +160,15 @@ function hub_theme_enqueue() {
     // wp_enqueue_script( 'glightbox', 'https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.3.1/js/glightbox.min.js', array(), $the_theme->get( 'Version' ), true );
     // wp_deregister_script( 'jquery' ); // needed by gravity forms
     // phpcs:enable
+
+    wp_enqueue_style( 'swiper', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css', array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
+    wp_enqueue_script( 'swiper', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js', array(), null, true ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
+    wp_enqueue_style( 'aos-style', 'https://unpkg.com/aos@2.3.1/dist/aos.css', array() ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
+    wp_enqueue_script( 'aos', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), null, true ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
+	wp_enqueue_script( 'lenis', 'https://unpkg.com/lenis@1.3.11/dist/lenis.min.js', array(), null, true ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
+	wp_enqueue_style( 'lenis-style', 'https://unpkg.com/lenis@1.3.11/dist/lenis.css', array() ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
+	wp_enqueue_style( 'tom-select', 'https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.min.css', array(), '2.3.1' );
+    wp_enqueue_script( 'tom-select', 'https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js', array(), '2.3.1', true );
 }
 add_action( 'wp_enqueue_scripts', 'hub_theme_enqueue' );
 
@@ -216,6 +187,67 @@ add_action(
         }
    </style>';
     }
+);
+
+add_action(
+	'wp_footer',
+	function () {
+		?>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+	if (typeof Lenis === 'undefined') return;
+	const lenis = new Lenis({
+		smooth: true,
+		lerp: 0.1
+	});
+	function raf(time) {
+		lenis.raf(time);
+		requestAnimationFrame(raf);
+	}
+	requestAnimationFrame(raf);
+});
+</script>
+		<?php
+	}
+);
+
+/**
+ * Add current-menu-parent class to /work/ menu item when viewing case study posts.
+ */
+add_filter(
+	'wp_nav_menu_objects',
+	function ( $items ) {
+        $news_page_id = get_option( 'page_for_posts' );
+        $work_url     = home_url( '/work/' );
+        foreach ( $items as $item ) {
+            // Remove highlight classes from both News and Work by default.
+            if ( intval( $item->object_id ) === intval( $news_page_id ) ) {
+                $item->classes = array_diff( $item->classes, array( 'current_page_parent', 'current-menu-parent', 'active' ) );
+            }
+            if ( $item->url === $work_url ) {
+                $item->classes = array_diff( $item->classes, array( 'current_page_parent', 'current-menu-parent', 'active' ) );
+            }
+        }
+        if ( is_singular( 'post' ) ) {
+            // Highlight News for single posts.
+            foreach ( $items as $item ) {
+                if ( intval( $item->object_id ) === intval( $news_page_id ) ) {
+                    $item->classes[] = 'current-menu-parent';
+                    $item->classes[] = 'active';
+                }
+            }
+        } elseif ( is_singular( 'case_study' ) ) {
+			// Highlight Work for single case_study.
+			foreach ( $items as $item ) {
+				if ( $item->url === $work_url ) {
+					$item->classes[] = 'current-menu-parent';
+					$item->classes[] = 'active';
+				}
+			}
+		}
+		return $items;
+	},
+	20
 );
 
 /**
@@ -257,130 +289,200 @@ function remove_nav_menu_item_id( $atts ) {
 add_filter( 'nav_menu_link_attributes', 'remove_nav_menu_item_id' );
 
 
-// ===========================================================================
-// Gravity Forms WCAG 2.1 AA 1.3.5 Compliance - Add autocomplete attributes
-// ===========================================================================
+/**
+ * Shortcode to display parent categories of service taxonomy terms assigned to the current post.
+ */
+add_shortcode( 'service_parents', 'cb_service_parents_shortcode' );
 
 /**
- * Add autocomplete attributes to Gravity Forms fields for WCAG 2.1 AA 1.3.5 compliance.
+ * Displays parent categories of service taxonomy terms assigned to the current post.
  *
- * @param string $field_content The field HTML content.
- * @param object $field         The field object.
- * @return string Modified field HTML with autocomplete attribute.
+ * @return string HTML markup for parent service categories or empty string.
  */
-function add_autocomplete_to_gform_fields( $field_content, $field ) {
-	// Map Gravity Forms field labels to autocomplete values.
-	$autocomplete_map = array(
-		// Name fields.
-		'name'         => 'name',
-		'first name'   => 'given-name',
-		'first'        => 'given-name',
-		'last name'    => 'family-name',
-		'last'         => 'family-name',
-		'full name'    => 'name',
+function cb_service_parents_shortcode() {
 
-		// Contact fields.
-		'email'        => 'email',
-		'phone'        => 'tel',
-		'telephone'    => 'tel',
-		'mobile'       => 'tel-national',
+    if ( ! is_singular() ) {
+        return '';
+    }
 
-		// Address fields.
-		'address'      => 'street-address',
-		'street'       => 'address-line1',
-		'city'         => 'address-level2',
-		'state'        => 'address-level1',
-		'zip'          => 'postal-code',
-		'postcode'     => 'postal-code',
-		'country'      => 'country-name',
+    $post_id = get_the_ID();
+	$terms   = get_the_terms( $post_id, 'service' );
 
-		// Company fields.
-		'company'      => 'organization',
-		'organization' => 'organization',
+	if ( ! $terms || is_wp_error( $terms ) ) {
+		return '';
+	}
 
-		// Other common fields.
-		'job title'    => 'organization-title',
-		'website'      => 'url',
-	);
+    $parents = array();
+    foreach ( $terms as $term ) {
+        if ( $term->parent ) {
+            $parent = get_term( $term->parent, 'service' );
+            if ( $parent && ! is_wp_error( $parent ) ) {
+                $parents[ $parent->term_id ] = $parent;
+            }
+        } else {
+            $parents[ $term->term_id ] = $term;
+        }
+    }
 
-	// Get field label in lowercase for comparison.
-	$field_label = strtolower( trim( $field->label ) );
+	if ( empty( $parents ) ) {
+		return '';
+	}
 
-	// Determine autocomplete value.
-	$autocomplete_value = '';
+    $output = '<ul class="service-parents">';
+    foreach ( $parents as $parent ) {
+        $output .= '<li><a href="' . esc_url( home_url( '/work/?service=' . $parent->slug ) ) . '">' . esc_html( $parent->name ) . '</a></li>';
+    }
+	$output .= '</ul>';
 
-	// Check for exact matches first.
-	if ( isset( $autocomplete_map[ $field_label ] ) ) {
-		$autocomplete_value = $autocomplete_map[ $field_label ];
-	} else {
-		// Check for partial matches.
-		foreach ( $autocomplete_map as $key => $value ) {
-			if ( strpos( $field_label, $key ) !== false ) {
-				$autocomplete_value = $value;
-				break;
+	return $output;
+}
+
+
+if ( ! function_exists( 'get_work_image' ) ) {
+    /**
+     * Returns the best available image for a work/case study post, in order:
+     * 1. Post thumbnail
+     * 2. Vimeo video thumbnail (if vimeo_url ACF field is set)
+     * 3. First cb-full-image block image
+     * 4. Default post image
+     *
+     * @param int    $post_id  The post ID.
+     * @param string $css_class The CSS class to apply to the image.
+     * @return string HTML <img> tag for the image.
+     */
+    function get_work_image( $post_id, $css_class = 'work-card__image' ) {
+        // 1. Try post thumbnail
+        if ( get_the_post_thumbnail( $post_id ) ) {
+            return get_the_post_thumbnail(
+                $post_id,
+                'full',
+                array(
+                    'class' => $css_class,
+                    'alt'   => get_post_meta(
+                        get_post_thumbnail_id( $post_id ),
+                        '_wp_attachment_image_alt',
+                        true
+                    ),
+                )
+            );
+        }
+
+        // 2. Try Vimeo video thumbnail as fallback
+        $vimeo_url   = get_field( 'vimeo_url', $post_id );
+        $vimeo_thumb = '';
+        if ( $vimeo_url ) {
+            if ( preg_match( '/vimeo\\.com\\/(?:video\/)?(\\d+)/', $vimeo_url, $matches ) ) {
+                $vimeo_id = $matches[1];
+                if ( function_exists( 'get_vimeo_data_from_id' ) ) {
+                    $vimeo_thumb = get_vimeo_data_from_id( $vimeo_id, 'thumbnail_url' );
+                }
+            }
+        }
+        if ( $vimeo_thumb ) {
+            return '<img src="' . esc_url( $vimeo_thumb ) . '" alt="" class="' . esc_attr( $css_class ) . '" />';
+        }
+
+        // 3. Try first cb-full-image block image
+        $post_blocks = parse_blocks( get_the_content( null, false, $post_id ) );
+        if ( ! function_exists( 'cb_find_first_full_image_url' ) ) {
+            /**
+             * Recursively find the first cb-full-image block image URL.
+             *
+             * @param array $blocks The parsed blocks array.
+             * @return string Image URL if found, empty string otherwise.
+             */
+            function cb_find_first_full_image_url( $blocks ) {
+                foreach ( $blocks as $block ) {
+                    if (
+                        isset( $block['blockName'] ) &&
+                        'cb/cb-full-image' === $block['blockName'] &&
+                        ! empty( $block['attrs']['data']['image'] )
+                    ) {
+                        $image_id = $block['attrs']['data']['image'];
+                        $img_url  = wp_get_attachment_image_url( $image_id, 'full' );
+                        if ( $img_url ) {
+                            return $img_url;
+                        }
+                    }
+                    if ( ! empty( $block['innerBlocks'] ) ) {
+                        $found = cb_find_first_full_image_url( $block['innerBlocks'] );
+                        if ( $found ) {
+                            return $found;
+                        }
+                    }
+                }
+                return '';
+            }
+        }
+        $full_image_url = cb_find_first_full_image_url( $post_blocks );
+        if ( $full_image_url ) {
+            return '<img src="' . esc_url( $full_image_url ) . '" alt="" class="' . esc_attr( $css_class ) . '" />';
+        }
+
+        // 4. Default post image
+        return '<img src="' . esc_url( get_stylesheet_directory_uri() . '/img/default-post-image.png' ) . '" alt="" class="' . esc_attr( $css_class ) . '" />';
+    }
+}
+
+// this populates the CB CTA select with the options defined in the ACF options page repeater field.
+add_filter(
+	'acf/load_field/name=cta_choice',
+	function ( $field ) {
+		$field['choices'] = array();
+
+		// Get repeater rows from options.
+		if ( have_rows( 'ctas', 'option' ) ) {
+			while ( have_rows( 'ctas', 'option' ) ) {
+				the_row();
+				$title = get_sub_field( 'cta_id' );
+				if ( $title ) {
+					// Use title as both key and label, or set your own key.
+					$field['choices'][ $title ] = $title;
+				}
 			}
 		}
-	}
 
-	// Add autocomplete attribute if a match was found.
-	if ( ! empty( $autocomplete_value ) && strpos( $field_content, 'autocomplete=' ) === false ) {
-		// For text, email, tel, and url inputs.
-		if ( in_array( $field->type, array( 'text', 'email', 'phone', 'website' ), true ) ) {
-			$field_content = str_replace( '<input', '<input autocomplete="' . esc_attr( $autocomplete_value ) . '"', $field_content );
+		return $field;
+	}
+);
+
+add_filter(
+	'acf/load_field/name=insight_cta',
+	function ( $field ) {
+		$field['choices'] = array();
+
+		// Get repeater rows from options.
+		if ( have_rows( 'ctas', 'option' ) ) {
+			while ( have_rows( 'ctas', 'option' ) ) {
+				the_row();
+				$title = get_sub_field( 'cta_id' );
+				if ( $title ) {
+					// Use title as both key and label, or set your own key.
+					$field['choices'][ $title ] = $title;
+				}
+			}
 		}
+
+		return $field;
 	}
+);
+add_filter(
+	'acf/load_field/name=press_cta',
+	function ( $field ) {
+		$field['choices'] = array();
 
-	// Handle name fields specifically (they have sub-fields).
-	if ( 'name' === $field->type ) {
-		// First name - add both autocomplete and aria-label.
-		$field_content = preg_replace(
-			'/(<input[^>]*name=[\'"]input_' . $field->id . '\.3[\'"][^>]*)(>)/i',
-			'$1 autocomplete="given-name" aria-label="First Name"$2',
-			$field_content
-		);
-		// Last name - add both autocomplete and aria-label.
-		$field_content = preg_replace(
-			'/(<input[^>]*name=[\'"]input_' . $field->id . '\.6[\'"][^>]*)(>)/i',
-			'$1 autocomplete="family-name" aria-label="Last Name"$2',
-			$field_content
-		);
+		// Get repeater rows from options.
+		if ( have_rows( 'ctas', 'option' ) ) {
+			while ( have_rows( 'ctas', 'option' ) ) {
+				the_row();
+				$title = get_sub_field( 'cta_id' );
+				if ( $title ) {
+					// Use title as both key and label, or set your own key.
+					$field['choices'][ $title ] = $title;
+				}
+			}
+		}
+
+		return $field;
 	}
-
-	// Handle CAPTCHA fields - ensure proper labeling and autocomplete.
-	if ( 'captcha' === $field->type ) {
-		// Add autocomplete="off" to CAPTCHA input fields.
-		$field_content = preg_replace(
-			'/(<input[^>]*type=[\'"]text[\'"][^>]*)(>)/i',
-			'$1 autocomplete="off" aria-label="CAPTCHA verification code"$2',
-			$field_content
-		);
-
-		// Ensure the CAPTCHA image has proper alt text.
-		$field_content = preg_replace(
-			'/(<img[^>]*class=[\'"][^\'\"]*gfield_captcha[^\'\"]*[\'"][^>]*)(\/?>)/i',
-			'$1 alt="CAPTCHA verification image - please enter the characters shown"$2',
-			$field_content
-		);
-	}
-
-	return $field_content;
-}
-add_filter( 'gform_field_content', 'add_autocomplete_to_gform_fields', 10, 2 );
-
-/**
- * Add custom menu item to primary navigation.
- *
- * @param string $items The HTML list content for the menu items.
- * @param object $args  An object containing wp_nav_menu() arguments.
- * @return string Modified menu items HTML.
- */
-function add_custom_menu_item( $items, $args ) {
-    if ( 'primary_nav' === $args->theme_location ) {
-
-        $new_item = '<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class="menu-item menu-item-type-post_type menu-item-object-page nav-item fs-subtle"><a href="' . get_home_url() . '/zh/" class="nav-link">中文</a></li>';
-
-        $items .= $new_item;
-    }
-    return $items;
-}
-add_filter( 'wp_nav_menu_items', 'add_custom_menu_item', 10, 2 );
+);

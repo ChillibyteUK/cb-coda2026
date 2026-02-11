@@ -1,36 +1,55 @@
 .footer {
-  background-color: var(--col-sipco-grey);
-  color: var(--col-black);
+  background-color: var(--col-primary-black);
+  color: #fff;
 
-  font-size: var(--fs-small);
+  font-size: var(--fs-100);
 
-  ul {
-    margin-block: 0;
+  .footer-title {
+    font-weight: var(--fw-semi);
   }
-
-  &__menu {
+  .footer-title--lg {
+    font-weight: var(--fw-semi);
+    font-size: var(--fs-100-connect);
+  }
+  .footer__menu {
     list-style: none;
     padding-inline-start: 0;
+    font-weight: var(--fw-light);
+    li {
+      padding-bottom: 0.25rem;
+    }
   }
-
   a {
+    color: inherit;
     text-decoration: none;
-    font-size: inherit;
-    color: var(--col-black);
-    transition: color var(--transition);
+    transition: color 0.3s ease;
     &:hover {
-      color: var(--col-simco-gold);
+      color: var(--col-neutral-500);
     }
   }
 
-  .logo-grid {
-    display: grid;
-    row-gap: 1rem;
-    grid-template-rows: 1fr auto;
-    img {
-      max-width: 280px;
-      height: auto;
+  &__logo {
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    .footer__logo-clip {
+      overflow: hidden;
+      display: block;
+      width: 100%;
+    }
+    .footer__logo-inner {
+      display: block;
+      transform-origin: left center;
+      will-change: transform;
+      svg {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
     }
   }
 
+  &__colophon {
+    color: var(--col-neutral-700);
+    font-size: var(--fs-100);
+  }
 }

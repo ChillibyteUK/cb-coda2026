@@ -17,99 +17,267 @@
     "color": {
       "palette": [
         {
+          "name": "primary-black",
+          "slug": "primary-black",
+          "color": "hsl(var(--hsl-primary-black))",
+          "origin": "theme"
+        },
+        {
           "name": "white",
           "slug": "white",
-          "color": "hsl(0 0% 100%)",
+          "color": "#fff",
           "origin": "theme"
         },
         {
-          "name": "black",
-          "slug": "black",
-          "color": "hsl(0 0% 0%)",
+          "name": "neutral-1100",
+          "slug": "neutral-1100",
+          "color": "#22211e",
           "origin": "theme"
         },
         {
-          "name": "sipco-navy",
-          "slug": "sipco-navy",
-          "color": "hsl(210 30% 20%)",
+          "name": "neutral-1000",
+          "slug": "neutral-1000",
+          "color": "#363531",
           "origin": "theme"
         },
         {
-          "name": "sipco-red",
-          "slug": "sipco-red",
-          "color": "hsl(353 60% 38%)",
+          "name": "neutral-900",
+          "slug": "neutral-900",
+          "color": "#505049",
           "origin": "theme"
         },
         {
-          "name": "dark-grey",
-          "slug": "dark-grey",
-          "color": "hsl(0 0% 44%)",
+          "name": "neutral-800",
+          "slug": "neutral-800",
+          "color": "#5e5d55",
           "origin": "theme"
         },
         {
-          "name": "light-gold",
-          "slug": "light-gold",
-          "color": "hsl(47 18% 90%)",
+          "name": "neutral-700",
+          "slug": "neutral-700",
+          "color": "#77766c",
           "origin": "theme"
         },
         {
-          "name": "light-gold-40",
-          "slug": "light-gold-40",
-          "color": "hsl(var(--col-light-gold-hsl) / 0.4)",
+          "name": "neutral-600",
+          "slug": "neutral-600",
+          "color": "#939287",
           "origin": "theme"
         },
         {
-          "name": "sipco-grey",
-          "slug": "sipco-grey",
-          "color": "hsl(47 18% 90%)",
+          "name": "neutral-500",
+          "slug": "neutral-500",
+          "color": "#aeada1",
           "origin": "theme"
         },
         {
-          "name": "sipco-coral-15",
-          "slug": "sipco-coral-15",
-          "color": "#f5eae9",
+          "name": "neutral-400",
+          "slug": "neutral-400",
+          "color": "#c9c7bc",
           "origin": "theme"
         },
         {
-          "name": "sipco-coral-30",
-          "slug": "sipco-coral-30",
-          "color": "#ead5d3",
+          "name": "neutral-300",
+          "slug": "neutral-300",
+          "color": "#dddcd2",
           "origin": "theme"
         },
         {
-          "name": "sipco-coral-50",
-          "slug": "sipco-coral-50",
-          "color": "#ddb9b5",
+          "name": "neutral-200",
+          "slug": "neutral-200",
+          "color": "#ebe9e1",
           "origin": "theme"
         },
         {
-          "name": "sipco-coral-100",
-          "slug": "sipco-coral-100",
-          "color": "#ba736c",
+          "name": "neutral-100",
+          "slug": "neutral-100",
+          "color": "#f8f7f0",
           "origin": "theme"
         },
         {
-          "name": "sipco-dark-grey",
-          "slug": "sipco-dark-grey",
-          "color": "#707074",
+          "name": "purple-1000",
+          "slug": "purple-1000",
+          "color": "#190a83",
           "origin": "theme"
         },
         {
-          "name": "sipco-mid-grey",
-          "slug": "sipco-mid-grey",
-          "color": "#f4f4f4",
+          "name": "purple-900",
+          "slug": "purple-900",
+          "color": "#2f13ba",
           "origin": "theme"
         },
         {
-          "name": "sipco-light-grey",
-          "slug": "sipco-light-grey",
-          "color": "#f8f8f7",
+          "name": "purple-800",
+          "slug": "purple-800",
+          "color": "#4c35d0",
           "origin": "theme"
         },
         {
-          "name": "form-grey",
-          "slug": "form-grey",
-          "color": "#F5F2EC",
+          "name": "purple-700",
+          "slug": "purple-700",
+          "color": "#7162e1",
+          "origin": "theme"
+        },
+        {
+          "name": "purple-600",
+          "slug": "purple-600",
+          "color": "#8b7ff0",
+          "origin": "theme"
+        },
+        {
+          "name": "purple-500",
+          "slug": "purple-500",
+          "color": "#a49bfd",
+          "origin": "theme"
+        },
+        {
+          "name": "purple-400",
+          "slug": "purple-400",
+          "color": "#bcb7ff",
+          "origin": "theme"
+        },
+        {
+          "name": "purple-300",
+          "slug": "purple-300",
+          "color": "#d0ccff",
+          "origin": "theme"
+        },
+        {
+          "name": "purple-200",
+          "slug": "purple-200",
+          "color": "#e0deff",
+          "origin": "theme"
+        },
+        {
+          "name": "purple-100",
+          "slug": "purple-100",
+          "color": "#f1f0ff",
+          "origin": "theme"
+        },
+        {
+          "name": "lime-1100",
+          "slug": "lime-1100",
+          "color": "#345a00",
+          "origin": "theme"
+        },
+        {
+          "name": "lime-1000",
+          "slug": "lime-1000",
+          "color": "#3d6900",
+          "origin": "theme"
+        },
+        {
+          "name": "lime-900",
+          "slug": "lime-900",
+          "color": "hsl(var(--hsl-lime-900))",
+          "origin": "theme"
+        },
+        {
+          "name": "lime-800",
+          "slug": "lime-800",
+          "color": "#5e9f00",
+          "origin": "theme"
+        },
+        {
+          "name": "lime-700",
+          "slug": "lime-700",
+          "color": "#6bb600",
+          "origin": "theme"
+        },
+        {
+          "name": "lime-600",
+          "slug": "lime-600",
+          "color": "#94dd2c",
+          "origin": "theme"
+        },
+        {
+          "name": "lime-500",
+          "slug": "lime-500",
+          "color": "#adf448",
+          "origin": "theme"
+        },
+        {
+          "name": "lime-400",
+          "slug": "lime-400",
+          "color": "#b8ff52",
+          "origin": "theme"
+        },
+        {
+          "name": "lime-300",
+          "slug": "lime-300",
+          "color": "#cafc83",
+          "origin": "theme"
+        },
+        {
+          "name": "lime-200",
+          "slug": "lime-200",
+          "color": "#ddfbb2",
+          "origin": "theme"
+        },
+        {
+          "name": "lime-100",
+          "slug": "lime-100",
+          "color": "#eefed9",
+          "origin": "theme"
+        },
+        {
+          "name": "red-1000",
+          "slug": "red-1000",
+          "color": "#6e0606",
+          "origin": "theme"
+        },
+        {
+          "name": "red-900",
+          "slug": "red-900",
+          "color": "#850d0d",
+          "origin": "theme"
+        },
+        {
+          "name": "red-800",
+          "slug": "red-800",
+          "color": "#a51616",
+          "origin": "theme"
+        },
+        {
+          "name": "red-700",
+          "slug": "red-700",
+          "color": "#c21d1d",
+          "origin": "theme"
+        },
+        {
+          "name": "red-600",
+          "slug": "red-600",
+          "color": "#e03030",
+          "origin": "theme"
+        },
+        {
+          "name": "red-500",
+          "slug": "red-500",
+          "color": "#ec5a5a",
+          "origin": "theme"
+        },
+        {
+          "name": "red-400",
+          "slug": "red-400",
+          "color": "#ff8989",
+          "origin": "theme"
+        },
+        {
+          "name": "red-300",
+          "slug": "red-300",
+          "color": "#ffc0c0",
+          "origin": "theme"
+        },
+        {
+          "name": "red-200",
+          "slug": "red-200",
+          "color": "#ffdfdf",
+          "origin": "theme"
+        },
+        {
+          "name": "red-100",
+          "slug": "red-100",
+          "color": "#fff0f0",
           "origin": "theme"
         }
       ]
@@ -117,59 +285,74 @@
     "typography": {
       "fontSizes": [
         {
-          "name": "base",
-          "slug": "base",
-          "size": "clamp(0.95rem, 0.9rem + 0.3vw, 1rem)"
-        },
-        {
-          "name": "ticker",
-          "slug": "ticker",
-          "size": "clamp(2.25rem, 1.9rem + 2.6vw, 4rem)"
-        },
-        {
-          "name": "h1",
-          "slug": "h1",
-          "size": "clamp(1.75rem, 1.4rem + 1.6vw, 3rem)"
-        },
-        {
-          "name": "h2",
-          "slug": "h2",
-          "size": "clamp(1.5rem, 1.3rem + 1vw, 2rem)"
-        },
-        {
-          "name": "h3",
-          "slug": "h3",
-          "size": "clamp(1.25rem, 1.15rem + 0.8vw, 1.6rem)"
-        },
-        {
-          "name": "h4",
-          "slug": "h4",
-          "size": "clamp(1.15rem, 1.05rem + 0.6vw, 1.4rem)"
-        },
-        {
-          "name": "h5",
-          "slug": "h5",
-          "size": "clamp(1.05rem, 1rem + 0.4vw, 1.25rem)"
-        },
-        {
-          "name": "lead-in",
-          "slug": "lead-in",
-          "size": "clamp(1.1rem, 1rem + 0.5vw, 1.3rem)"
-        },
-        {
-          "name": "body-medium",
-          "slug": "body-medium",
-          "size": "clamp(1rem, 0.95rem + 0.3vw, 1.125rem)"
-        },
-        {
           "name": "body",
           "slug": "body",
-          "size": "var(--fs-base)"
+          "size": "18px"
         },
         {
-          "name": "small",
-          "slug": "small",
-          "size": "clamp(0.85rem, 0.8rem + 0.2vw, 0.9rem)"
+          "name": "50",
+          "slug": "50",
+          "size": "0.8889rem"
+        },
+        {
+          "name": "100",
+          "slug": "100",
+          "size": "1rem"
+        },
+        {
+          "name": "200",
+          "slug": "200",
+          "size": "1.125rem"
+        },
+        {
+          "name": "300",
+          "slug": "300",
+          "size": "clamp(1rem, 0.95rem + 0.5vw, 1.25rem)"
+        },
+        {
+          "name": "400",
+          "slug": "400",
+          "size": "clamp(1.0625rem, 0.9rem + 0.6vw, 1.375rem)"
+        },
+        {
+          "name": "500",
+          "slug": "500",
+          "size": "clamp(1.1875rem, 0.9rem + 1vw, 1.751rem)"
+        },
+        {
+          "name": "600",
+          "slug": "600",
+          "size": "clamp(1.3125rem, 0.9rem + 1.2vw, 1.999rem)"
+        },
+        {
+          "name": "700",
+          "slug": "700",
+          "size": "clamp(1.4375rem, 0.9rem + 1.4vw, 2.25rem)"
+        },
+        {
+          "name": "800",
+          "slug": "800",
+          "size": "clamp(1.5rem, 0.9rem + 1.6vw, 2.5rem)"
+        },
+        {
+          "name": "850",
+          "slug": "850",
+          "size": "clamp(1.875rem, 0.95rem + 1.9vw, 3.125rem)"
+        },
+        {
+          "name": "875",
+          "slug": "875",
+          "size": "clamp(2.25rem, 1rem + 2.2vw, 3.5rem)"
+        },
+        {
+          "name": "900",
+          "slug": "900",
+          "size": "clamp(3rem, 1rem + 3vw, 5rem)"
+        },
+        {
+          "name": "950",
+          "slug": "950",
+          "size": "clamp(3.4375rem, 1rem + 4vw, 6.25rem)"
         }
       ]
     }

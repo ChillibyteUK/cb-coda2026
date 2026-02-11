@@ -3,7 +3,7 @@
 @import "buttons";
 @import "header";
 @import "footer";
-@import "insights";
+@import "news";
 @import "a11y";
 @import "search";
 @import "blocks/blocks";
@@ -76,12 +76,343 @@ body {
   padding-inline: 0 !important;
 }
 
-main {
-  margin-top: var(--h-top);
+.id-container {
+  width: min(100%, 1920px);
+  margin: 0 auto;
 }
+
+// main {
+//   margin-top: var(--h-top);
+// }
 
 .ratio-9x16 {
   --bs-aspect-ratio: calc(16 / 9 * 100%); /* = 177.77% */
+}
+
+.service-parents {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  min-width: 50%;
+  li {
+    font-size: var(--fs-body);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    display: inline-block;
+    width: 100%;
+    a {
+      text-decoration: none;
+      display: block;
+      color: var(--col-green-500);
+      transition:
+        background-color 0.3s,
+        color 0.3s;
+
+      &:hover {
+        text-decoration: none;
+        background-color: hsl(var(--hsl-neutral-800) / 0.8);
+      }
+    }
+  }
+  li:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  }
+}
+
+/* Bootstrap-style order utilities (replicate for each breakpoint) */
+
+/* base */
+.order-first {
+  order: -1 !important;
+}
+.order-last {
+  order: 13 !important;
+}
+.order-0 {
+  order: 0 !important;
+}
+.order-1 {
+  order: 1 !important;
+}
+.order-2 {
+  order: 2 !important;
+}
+.order-3 {
+  order: 3 !important;
+}
+.order-4 {
+  order: 4 !important;
+}
+.order-5 {
+  order: 5 !important;
+}
+.order-6 {
+  order: 6 !important;
+}
+.order-7 {
+  order: 7 !important;
+}
+.order-8 {
+  order: 8 !important;
+}
+.order-9 {
+  order: 9 !important;
+}
+.order-10 {
+  order: 10 !important;
+}
+.order-11 {
+  order: 11 !important;
+}
+.order-12 {
+  order: 12 !important;
+}
+
+/* sm */
+@media (min-width: 576px) {
+  .order-sm-first {
+    order: -1 !important;
+  }
+  .order-sm-last {
+    order: 13 !important;
+  }
+  .order-sm-0 {
+    order: 0 !important;
+  }
+  .order-sm-1 {
+    order: 1 !important;
+  }
+  .order-sm-2 {
+    order: 2 !important;
+  }
+  .order-sm-3 {
+    order: 3 !important;
+  }
+  .order-sm-4 {
+    order: 4 !important;
+  }
+  .order-sm-5 {
+    order: 5 !important;
+  }
+  .order-sm-6 {
+    order: 6 !important;
+  }
+  .order-sm-7 {
+    order: 7 !important;
+  }
+  .order-sm-8 {
+    order: 8 !important;
+  }
+  .order-sm-9 {
+    order: 9 !important;
+  }
+  .order-sm-10 {
+    order: 10 !important;
+  }
+  .order-sm-11 {
+    order: 11 !important;
+  }
+  .order-sm-12 {
+    order: 12 !important;
+  }
+}
+
+/* md */
+@media (min-width: 768px) {
+  .order-md-first {
+    order: -1 !important;
+  }
+  .order-md-last {
+    order: 13 !important;
+  }
+  .order-md-0 {
+    order: 0 !important;
+  }
+  .order-md-1 {
+    order: 1 !important;
+  }
+  .order-md-2 {
+    order: 2 !important;
+  }
+  .order-md-3 {
+    order: 3 !important;
+  }
+  .order-md-4 {
+    order: 4 !important;
+  }
+  .order-md-5 {
+    order: 5 !important;
+  }
+  .order-md-6 {
+    order: 6 !important;
+  }
+  .order-md-7 {
+    order: 7 !important;
+  }
+  .order-md-8 {
+    order: 8 !important;
+  }
+  .order-md-9 {
+    order: 9 !important;
+  }
+  .order-md-10 {
+    order: 10 !important;
+  }
+  .order-md-11 {
+    order: 11 !important;
+  }
+  .order-md-12 {
+    order: 12 !important;
+  }
+}
+
+/* lg */
+@media (min-width: 992px) {
+  .order-lg-first {
+    order: -1 !important;
+  }
+  .order-lg-last {
+    order: 13 !important;
+  }
+  .order-lg-0 {
+    order: 0 !important;
+  }
+  .order-lg-1 {
+    order: 1 !important;
+  }
+  .order-lg-2 {
+    order: 2 !important;
+  }
+  .order-lg-3 {
+    order: 3 !important;
+  }
+  .order-lg-4 {
+    order: 4 !important;
+  }
+  .order-lg-5 {
+    order: 5 !important;
+  }
+  .order-lg-6 {
+    order: 6 !important;
+  }
+  .order-lg-7 {
+    order: 7 !important;
+  }
+  .order-lg-8 {
+    order: 8 !important;
+  }
+  .order-lg-9 {
+    order: 9 !important;
+  }
+  .order-lg-10 {
+    order: 10 !important;
+  }
+  .order-lg-11 {
+    order: 11 !important;
+  }
+  .order-lg-12 {
+    order: 12 !important;
+  }
+}
+
+/* xl */
+@media (min-width: 1200px) {
+  .order-xl-first {
+    order: -1 !important;
+  }
+  .order-xl-last {
+    order: 13 !important;
+  }
+  .order-xl-0 {
+    order: 0 !important;
+  }
+  .order-xl-1 {
+    order: 1 !important;
+  }
+  .order-xl-2 {
+    order: 2 !important;
+  }
+  .order-xl-3 {
+    order: 3 !important;
+  }
+  .order-xl-4 {
+    order: 4 !important;
+  }
+  .order-xl-5 {
+    order: 5 !important;
+  }
+  .order-xl-6 {
+    order: 6 !important;
+  }
+  .order-xl-7 {
+    order: 7 !important;
+  }
+  .order-xl-8 {
+    order: 8 !important;
+  }
+  .order-xl-9 {
+    order: 9 !important;
+  }
+  .order-xl-10 {
+    order: 10 !important;
+  }
+  .order-xl-11 {
+    order: 11 !important;
+  }
+  .order-xl-12 {
+    order: 12 !important;
+  }
+}
+
+/* xxl */
+@media (min-width: 1400px) {
+  .order-xxl-first {
+    order: -1 !important;
+  }
+  .order-xxl-last {
+    order: 13 !important;
+  }
+  .order-xxl-0 {
+    order: 0 !important;
+  }
+  .order-xxl-1 {
+    order: 1 !important;
+  }
+  .order-xxl-2 {
+    order: 2 !important;
+  }
+  .order-xxl-3 {
+    order: 3 !important;
+  }
+  .order-xxl-4 {
+    order: 4 !important;
+  }
+  .order-xxl-5 {
+    order: 5 !important;
+  }
+  .order-xxl-6 {
+    order: 6 !important;
+  }
+  .order-xxl-7 {
+    order: 7 !important;
+  }
+  .order-xxl-8 {
+    order: 8 !important;
+  }
+  .order-xxl-9 {
+    order: 9 !important;
+  }
+  .order-xxl-10 {
+    order: 10 !important;
+  }
+  .order-xxl-11 {
+    order: 11 !important;
+  }
+  .order-xxl-12 {
+    order: 12 !important;
+  }
 }
 
 // show stuff that overflows horizontally
@@ -112,225 +443,43 @@ for (; i < all.length; i++) {
 //   border-radius: 0;
 // }
 
-.has-arrow a,
-a.has-arrow {
-  position: relative;
-  padding-right: 1.5rem;
-  text-decoration: none;
-  display: inline-block;
-  &:after {
-    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='currentColor' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
-    display: inline-block;
-    vertical-align: middle;
-    top: 5px;
-    margin-left: 0.5rem;
-    transition: margin var(--transition);
-  }
-  &:hover:after,
-  &:focus-visible:after {
-    margin-left: 0.75rem;
-  }
+.has-lime-1000-border-top {
+  border-top: 1px solid var(--col-lime-1000);
 }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-select,
-textarea {
-  background-color: var(--col-form-grey);
-  border: 1px solid var(--col-form-grey);
-  border-radius: 0;
+.has-lime-1000-border-bottom {
+  border-bottom: 1px solid var(--col-lime-1000);
 }
 
-.has-light-grey-background-color {
-  input[type="text"],
-  input[type="email"],
-  input[type="tel"],
-  select,
-  textarea {
-    background-color: var(--col-white);
-    border: 1px solid var(--col-neutral-300);
-  }
-}
-
-// Gravity Forms file upload styling
-input[type="file"] {
-  &::file-selector-button {
-    // Copy .btn and .btn--mid-blue styles directly since @extend doesn't work in pseudo-elements
-    display: inline-block !important;
-    padding: 0.5rem 1rem !important;
-    text-align: center !important;
-    text-decoration: none !important;
-    border: 2px solid #eae8e1 !important;
-    cursor: pointer !important;
-    transition: all 0.3s ease !important;
-    border-radius: 6px !important;
-
-    // btn--mid-blue styles with fallback colors
-    background-color: #eae8e1 !important;
-    color: #000 !important;
-
-    &:hover {
-      background-color: #3a5578 !important;
-      border-color: #3a5578 !important;
-    }
-  }
-
-  // Alternative for older browsers - webkit prefix
-  &::-webkit-file-upload-button {
-    display: inline-block !important;
-    padding: 0.5rem 1rem !important;
-    text-align: center !important;
-    text-decoration: none !important;
-    border: 2px solid #eae8e1 !important;
-    cursor: pointer !important;
-    transition: all 0.3s ease !important;
-    border-radius: 6px !important;
-    background-color: #eae8e1 !important;
-    color: #000 !important;
-
-    &:hover {
-      background-color: #3a5578 !important;
-      border-color: #3a5578 !important;
-    }
-  }
-
-  // Style the filename text area
-  font-size: 1rem !important;
-  color: #666 !important;
-  border: 1px solid #ddd !important;
-  background-color: white;
-  padding: 0.5rem !important;
-}
-
-// Target Gravity Forms specifically
-.gform_wrapper input[type="file"] {
-  &::file-selector-button,
-  &::-webkit-file-upload-button {
-    display: inline-block !important;
-    padding: 0.5rem 1rem !important;
-    background-color: var(--col-form-grey) !important;
-    color: #000 !important;
-    border: 2px solid var(--col-form-grey) !important;
-    border-radius: 6px !important;
-    cursor: pointer !important;
-  }
-}
-
-// // Default submit buttons (overridden by specific selectors like .gform_button)
-// input[type="submit"] {
-//     @extend .btn;
-//     @extend .btn-dark;
-// }
-
-// Custom checkbox styling
-input[type="checkbox"] {
-  width: 1.5rem !important;
-  height: 1.5rem !important;
-  border-radius: 0 !important;
-  border: 2px solid #ddd !important;
-  background-color: #fff !important;
-  cursor: pointer !important;
-
-  &:checked {
-    background-color: #152634 !important;
-    border-color: #152634 !important;
-  }
-
-  &:focus-visible {
-    outline: none !important;
-    box-shadow: 0 0 0 2px rgba(21, 38, 52, 0.3) !important;
-  }
-}
-
-// Target Gravity Forms checkboxes specifically
-.gform_wrapper input[type="checkbox"] {
-  width: 1.5rem !important;
-  height: 1.5rem !important;
-  border-radius: 0 !important;
-  border: 2px solid #ddd !important;
-  background-color: #fff !important;
-  cursor: pointer !important;
-
-  &:checked {
-    background-color: #152634 !important;
-    border-color: #152634 !important;
-  }
-}
-
-// Placeholder text styling
-input::placeholder,
-textarea::placeholder {
-  color: var(--col-simco-navy) !important;
-  opacity: 1 !important;
-}
-
-// all gf placeholder text
-.gform_wrapper .gfield_placeholder {
-  color: var(--col-simco-navy) !important;
-  opacity: 1 !important; // override default opacity
-}
-
-.ginput_container.ginput_container_consent {
+.service-parents {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 3rem;
+  margin-bottom: 0;
   display: flex;
-  gap: 0.5rem;
-  align-items: center;
+  flex-direction: column;
+  width: fit-content;
+  min-width: 50%;
+  li {
+    font-size: var(--fs-body);
+    border-top: 1px solid var(--col-lime-900);
+    display: inline-block;
+    width: 100%;
+    a {
+      text-decoration: none;
+      display: block;
+      color: var(--col-lime-900);
+      transition:
+        background-color 0.3s,
+        color 0.3s;
 
-  input[type="checkbox"] {
-    accent-color: #152634 !important;
-  }
-
-  .gform-field-label.gform-field-label--type-inline.gfield_consent_label {
-    font-size: 14px;
-    .gfield_required.gfield_required_text {
-      display: none !important;
+      &:hover {
+        text-decoration: none;
+        background-color: var(--col-lime-200);
+      }
     }
   }
-}
-
-.gfield_checkbox {
-  .gchoice {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    .gfield-choice-input {
-      width: 40px !important;
-      height: 40px !important;
-      accent-color: #152634 !important;
-    }
+  li:last-child {
+    border-bottom: 1px solid var(--col-lime-900);
   }
-}
-
-.wp-block-separator {
-  border: none;
-  border-top: 5px solid var(--col-sipco-grey) !important;
-  opacity: 1;
-}
-
-main:has(.has-watermark) {
-  background-size: contain;
-  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 1920 1080'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: none; %7D .cls-2 %7B fill: %23ead5d3; %7D .cls-3 %7B clip-path: url(%23clippath); %7D %3C/style%3E%3CclipPath id='clippath'%3E%3Crect class='cls-1' width='1920' height='1080'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Layer_1-2' data-name='Layer 1' opacity='0.2'%3E%3Cg class='cls-3'%3E%3Cpolygon class='cls-2' points='830.54 1081.92 1474.62 294.75 2118.54 1081.92 2361.41 1081.92 1474.62 -1.92 587.84 1081.92 830.54 1081.92'/%3E%3Cpolygon class='cls-2' points='1073.07 1202.42 1476.15 709.89 1879.24 1202.42 2121.94 1202.42 1476.15 413.05 830.37 1202.42 1073.07 1202.42'/%3E%3Cpolygon class='cls-2' points='1306.6 1327.5 1476.15 1120.27 1645.7 1327.5 1888.4 1327.5 1476.15 823.6 1063.9 1327.5 1306.6 1327.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: bottom right;
-}
-
-.block-watermark {
-  background-size: contain;
-  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 1920 1080'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: none; %7D .cls-2 %7B fill: %23ead5d3; %7D .cls-3 %7B clip-path: url(%23clippath); %7D %3C/style%3E%3CclipPath id='clippath'%3E%3Crect class='cls-1' width='1920' height='1080'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Layer_1-2' data-name='Layer 1' opacity='0.2'%3E%3Cg class='cls-3'%3E%3Cpolygon class='cls-2' points='830.54 1081.92 1474.62 294.75 2118.54 1081.92 2361.41 1081.92 1474.62 -1.92 587.84 1081.92 830.54 1081.92'/%3E%3Cpolygon class='cls-2' points='1073.07 1202.42 1476.15 709.89 1879.24 1202.42 2121.94 1202.42 1476.15 413.05 830.37 1202.42 1073.07 1202.42'/%3E%3Cpolygon class='cls-2' points='1306.6 1327.5 1476.15 1120.27 1645.7 1327.5 1888.4 1327.5 1476.15 823.6 1063.9 1327.5 1306.6 1327.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: bottom right;
-}
-.block-watermark--light {
-  background-size: contain;
-  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 1920 1080'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: none; %7D .cls-2 %7B fill: %23fff; %7D .cls-3 %7B clip-path: url(%23clippath); %7D %3C/style%3E%3CclipPath id='clippath'%3E%3Crect class='cls-1' width='1920' height='1080'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Layer_1-2' data-name='Layer 1' opacity='0.2'%3E%3Cg class='cls-3'%3E%3Cpolygon class='cls-2' points='830.54 1081.92 1474.62 294.75 2118.54 1081.92 2361.41 1081.92 1474.62 -1.92 587.84 1081.92 830.54 1081.92'/%3E%3Cpolygon class='cls-2' points='1073.07 1202.42 1476.15 709.89 1879.24 1202.42 2121.94 1202.42 1476.15 413.05 830.37 1202.42 1073.07 1202.42'/%3E%3Cpolygon class='cls-2' points='1306.6 1327.5 1476.15 1120.27 1645.7 1327.5 1888.4 1327.5 1476.15 823.6 1063.9 1327.5 1306.6 1327.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: bottom right;
-}
-
-.gquiz-correct-choice {
-  color: #007a00 !important;
-}
-
-.has-text-align-center {
-  text-align: center !important;
 }
