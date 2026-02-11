@@ -11711,26 +11711,7 @@ header:has(.navbar-collapse.collapse.show) {
   font-size: var(--fs-100);
 }
 
-.news-hero h1, .news-hero .h1 {
-  border-top: 1px solid var(--col-lime-1000);
-  font-size: var(--fs-850);
-  font-weight: var(--fw-light);
-  color: var(--col-lime-1000);
-}
-.news-hero h2, .news-hero .h2 {
-  border-top: 1px solid var(--col-lime-1000);
-  border-bottom: 1px solid var(--col-lime-1000);
-  font-size: var(--fs-600);
-  color: var(--col-neutral-700);
-  font-weight: var(--fw-light);
-  margin-bottom: 0;
-}
-.news-hero__content {
-  color: var(--col-primary-black);
-  font-size: var(--fs-500);
-  padding-block: 2rem 4rem;
-}
-.news-hero__content a {
+.news-insights-hero a {
   color: var(--col-lime-900);
   text-decoration: none;
 }

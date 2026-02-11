@@ -12,28 +12,32 @@ $page_for_posts = get_option( 'page_for_posts' );
 get_header();
 ?>
 <main id="main" class="news-insights">
-	<section id="<?php echo esc_attr( $block_id ); ?>" class="news-hero pt-5">
-		<h1 class="mt-5">
-			<div class="id-container px-4 px-md-5 pt-1">
+	<section class="news-insights-hero">
+		<div class="has-lime-1000-border-top has-lime-1000-border-bottom mt-4">
+			<h1 class="id-container px-4 px-md-5 fs-800 fw-light has-lime-1100-color lh-tightest pt-2 pb-1">
 				Insights &amp; perspectives
+			</h1>
+		</div>
+		<div class="has-lime-1000-border-bottom mb-4">
+			<div class="id-container px-4 px-md-5">
+				<h1 class="fw-light has-neutral-700-color fs-500 lh-tightest pt-2 pb-1">
+					Experience changes everything. Here's how we're shaping what's next.	
+				</h1>
 			</div>
-		</h1>
-		<h2>
-			<div class="id-container px-4 px-md-5 pt-2">
-				Experience changes everything. Here's how we're shaping what's next.
-			</div>
-		</h2>
-		<div class="row">
-			<div class="col-md-9 offset-md-3 news-hero__content">
-				<?php
-				// get content from page_for_posts.
-				echo wp_kses_post(
-					apply_filters(
-						'the_content',
-						$page_for_posts ? get_post_field( 'post_content', $page_for_posts ) : ''
-					)
-				);
-				?>
+		</div>
+		<div class="id-container px-4 px-md-5 pt-1 pb-5">
+			<div class="row">
+				<div class="col-md-9 offset-md-3 fs-500 pb-5">
+					<?php
+					// get content from page_for_posts.
+					echo wp_kses_post(
+						apply_filters(
+							'the_content',
+							$page_for_posts ? get_post_field( 'post_content', $page_for_posts ) : ''
+						)
+					);
+					?>
+				</div>
 			</div>
 		</div>
 	</section>
