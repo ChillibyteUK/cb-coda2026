@@ -13065,6 +13065,14 @@ span a {
   margin-bottom: 3rem;
 }
 
+.dept-email a {
+  color: var(--col-lime-1000);
+  text-decoration: none;
+}
+.dept-email a:hover {
+  text-decoration: underline;
+}
+
 body {
   background-color: var(--col-neutral-50);
 }

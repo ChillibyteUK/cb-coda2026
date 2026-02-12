@@ -452,6 +452,28 @@ function cb_list( $field ) {
 }
 
 /**
+ * Convert field content to a list of mailto links.
+ *
+ * @param string $field The field content containing email addresses.
+ * @return string The HTML output of mailto links.
+ */
+function cb_list_to_email( $field ) {
+    ob_start();
+    $field     = strip_tags( $field, '<br />' );
+    $addresses = preg_split( "/\r\n|\n|\r/", $field );
+    foreach ( $addresses as $address ) {
+        if ( '' === $address ) {
+            continue;
+        }
+		?>
+	<a href="mailto:<?php echo esc_html( antispambot( $address ) ); ?>"><?php echo esc_html( antispambot( $address ) ); ?></a><br>
+		<?php
+	}
+	return ob_get_clean();
+}
+
+
+/**
  * Converts a file size in bytes to a human-readable format.
  *
  * @param int $size      The size in bytes.
@@ -835,9 +857,9 @@ function cb_vimeo_url_with_dnt( $url ) {
         return $url;
     }
     // Parse URL.
-    $parts = parse_url( $url );
+    $parts = wp_parse_url( $url );
     if ( ! isset( $parts['query'] ) ) {
-        // No query string, just add dnt=1
+        // No query string, just add dnt=1.
         return $url . ( strpos( $url, '?' ) === false ? '?' : '' ) . 'dnt=1';
     }
     // Parse query string.

@@ -1,0 +1,9 @@
+.dept-email {
+  a {
+    color: var(--col-lime-1000);
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
