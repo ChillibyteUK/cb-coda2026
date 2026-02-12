@@ -11755,7 +11755,7 @@ header:has(.navbar-collapse.collapse.show) {
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .insight-type-grid__category {
-  border-bottom: 1px solid var(--col-lime-1000);
+  border-bottom: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
   text-transform: uppercase;
   margin-bottom: 1rem;
   font-size: var(--fs-50);
@@ -11802,8 +11802,8 @@ header:has(.navbar-collapse.collapse.show) {
   overflow: hidden;
 }
 .single-blog .category-wrapper {
-  border-top: 1px solid var(--col-lime-1000);
-  border-bottom: 1px solid var(--col-lime-1000);
+  border-top: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
+  border-bottom: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
   color: var(--_colour);
   text-transform: uppercase;
   font-weight: var(--fw-regular);
@@ -11812,7 +11812,7 @@ header:has(.navbar-collapse.collapse.show) {
   padding-block: 0.5rem 0.25rem;
 }
 .single-blog .post-title {
-  border-bottom: 1px solid var(--col-lime-1000);
+  border-bottom: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
   padding-block: 1rem;
 }
 .single-blog .post-title h1, .single-blog .post-title .h1 {
@@ -11820,7 +11820,7 @@ header:has(.navbar-collapse.collapse.show) {
   font-weight: var(--fw-light);
 }
 .single-blog .post-date-row {
-  border-top: 1px solid var(--col-lime-1000);
+  border-top: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
   padding-bottom: 2rem;
 }
 .single-blog .post-date-row .post-date {
@@ -11836,13 +11836,13 @@ header:has(.navbar-collapse.collapse.show) {
 .single-blog .post-content .container:first-of-type:not([class*=post-date]), .single-blog .post-content .wp-block-group:first-of-type:not([class*=post-date]):not(.alignfull) {
   color: var(--_colour);
   font-size: var(--fs-500);
-  border-bottom: 1px solid var(--col-lime-1000);
+  border-bottom: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
   margin-bottom: 2rem;
   padding-block: 1rem 0.5rem;
 }
 .single-blog .post-content h2, .single-blog .post-content .h2 {
   border-top: 1px solid var(--col-lime-1000);
-  border-bottom: 1px solid var(--col-lime-1000);
+  border-bottom: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
   color: var(--_colour);
   font-size: var(--fs-600);
   font-weight: var(--fw-light);
@@ -13165,12 +13165,8 @@ body {
   padding-inline: 0;
 }
 
-.container, .wp-block-group:not(.alignfull) {
-  padding-inline: 1.5rem !important;
-}
-
 .container .container, .wp-block-group:not(.alignfull) .container, .container .wp-block-group:not(.alignfull), .wp-block-group:not(.alignfull) .wp-block-group:not(.alignfull) {
-  padding-inline: 0 !important;
+  padding-inline: 0;
 }
 
 .id-container {

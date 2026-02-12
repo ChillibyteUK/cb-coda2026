@@ -70,11 +70,8 @@ body {
   }
 }
 
-.container {
-  padding-inline: 1.5rem !important;
-}
 .container .container {
-  padding-inline: 0 !important;
+  padding-inline: 0;
 }
 
 .id-container {

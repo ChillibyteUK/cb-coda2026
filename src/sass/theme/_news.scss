@@ -93,7 +93,7 @@
   }
 
   &__category {
-    border-bottom: 1px solid var(--col-lime-1000);
+    border-bottom: 1px solid hsl(var(--hsl-lime-1000) / 0.4) !important;
     text-transform: uppercase;
     margin-bottom: 1rem;
     font-size: var(--fs-50);
@@ -143,8 +143,8 @@
   }
 
   .category-wrapper {
-    border-top: 1px solid var(--col-lime-1000);
-    border-bottom: 1px solid var(--col-lime-1000);
+    border-top: 1px solid hsl(var(--hsl-lime-1000) / 0.4) !important;
+    border-bottom: 1px solid hsl(var(--hsl-lime-1000) / 0.4) !important;
     color: var(--_colour);
     text-transform: uppercase;
     font-weight: var(--fw-regular);
@@ -153,7 +153,7 @@
     padding-block: 0.5rem 0.25rem;
   }
   .post-title {
-    border-bottom: 1px solid var(--col-lime-1000);
+    border-bottom: 1px solid hsl(var(--hsl-lime-1000) / 0.4) !important;
     padding-block: 1rem;
     h1 {
       font-size: var(--fs-850);
@@ -161,7 +161,7 @@
     }
   }
   .post-date-row {
-    border-top: 1px solid var(--col-lime-1000);
+    border-top: 1px solid hsl(var(--hsl-lime-1000) / 0.4) !important;
     padding-bottom: 2rem;
     .post-date {
       color: var(--col-neutral-700);
@@ -178,14 +178,14 @@
     .container:first-of-type:not([class*="post-date"]) {
       color: var(--_colour);
       font-size: var(--fs-500);
-      border-bottom: 1px solid var(--col-lime-1000);
+      border-bottom: 1px solid hsl(var(--hsl-lime-1000) / 0.4) !important;
       margin-bottom: 2rem;
       padding-block: 1rem 0.5rem;
     }
 
     h2 {
       border-top: 1px solid var(--col-lime-1000);
-      border-bottom: 1px solid var(--col-lime-1000);
+      border-bottom: 1px solid hsl(var(--hsl-lime-1000) / 0.4) !important;
       color: var(--_colour);
       font-size: var(--fs-600);
       font-weight: var(--fw-light);
