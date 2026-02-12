@@ -205,13 +205,13 @@
         {
           "name": "lime-300",
           "slug": "lime-300",
-          "color": "#cafc83",
+          "color": "hsl(var(--hsl-lime-300))",
           "origin": "theme"
         },
         {
           "name": "lime-200",
           "slug": "lime-200",
-          "color": "#ddfbb2",
+          "color": "hsl(var(--hsl-lime-200))",
           "origin": "theme"
         },
         {

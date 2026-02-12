@@ -1,9 +1,9 @@
 .cb-featured-work {
   background-color: var(--col-lime-200);
   color: var(--col-primary-black);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  // border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   &__pre-title {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    // border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     padding-block: 0.5rem;
     color: var(--col-lime-900);
     font-weight: var(--fw-regular);
@@ -39,9 +39,8 @@
     align-self: flex-end;
     color: #fff;
     background: linear-gradient(
-      rgba(13, 13, 12, 0),
-      rgba(13, 13, 12, 0.6) 20%,
-      rgba(13, 13, 12, 0.8)
+      hsla(var(--hsl-lime-200) / 0.8) 0%,
+      hsla(var(--hsl-lime-300) / 0.8) 75%
     );
     padding: 2rem 2rem 1rem 1rem;
     z-index: 3;
@@ -50,11 +49,12 @@
   &__title {
     font-size: var(--fs-300);
     font-weight: var(--fw-semi);
+    color: var(--col-primary-black);
   }
   &__desc {
     font-size: var(--fs-200);
     font-weight: var(--fw-light);
-    color: var(--col-neutral-800);
+    color: var(--col-neutral-900);
     margin-top: 0.5rem;
   }
 

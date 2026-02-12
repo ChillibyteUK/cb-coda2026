@@ -14,14 +14,14 @@
   &__name {
     color: var(--col-lime-1100);
     font-size: var(--fs-500);
-    border-top: 1px solid hsl(var(--hsl-lime-1000) / 1) !important;
-    border-bottom: 1px solid hsl(var(--hsl-lime-1000) / 1) !important;
+    border-top: 1px solid hsl(var(--hsl-lime-1000) / 0.4) !important;
+    border-bottom: 1px solid hsl(var(--hsl-lime-1000) / 0.4) !important;
     padding-block: 0.25rem 0;
   }
   &__role {
     color: var(--col-neutral-900);
     font-size: var(--fs-300);
-    border-bottom: 1px solid hsl(var(--hsl-lime-1000) / 1) !important;
+    border-bottom: 1px solid hsl(var(--hsl-lime-1000) / 0.4) !important;
     padding-block: 0.25rem 0;
     margin-bottom: 1.5rem;
   }

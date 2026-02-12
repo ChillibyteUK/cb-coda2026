@@ -40,7 +40,7 @@ if ( $q->have_posts() ) {
 			FEATURED WORK
 		</div>
 	</div>
-	<div class="id-container">
+	<div class="id-container pb-2">
 		<div class="row g-2">
 		<?php
 		while ( $q->have_posts() ) {
@@ -61,7 +61,7 @@ if ( $q->have_posts() ) {
 				<?= get_work_image( get_the_ID(), 'cb-featured-work__image' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					<div class="cb-featured-work__content px-4 px-md-5">
 						<div class="cb-featured-work__title">
-						<?php the_title(); ?> <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/arrow-wh.svg' ); ?>" width=23 height=21 alt="" class="cb-featured-work__arrow" />
+						<?php the_title(); ?> <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/arrow-bk.svg' ); ?>" width=23 height=21 alt="" class="cb-featured-work__arrow" />
 						</div>
 						<div class="cb-featured-work__desc">
 						<?php

@@ -90,8 +90,9 @@ if ( is_front_page() ) {
 						<div class="cb-latest-insights__title">
 							<?php the_title(); ?>
 						</div>
-						<div class="cb-latest-insights__excerpt">
-							<?php echo wp_kses_post( wp_trim_words( get_the_excerpt(), 18, '...' ) ); ?>
+						<div class="cb-latest-insights__date d-flex align-items-center gap-2">
+							<?php echo get_the_date( 'j F Y' ); ?> 
+ 							<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/arrow-n900.svg' ); ?>" width=14 height=13 alt="" />
 						</div>
 					</div>
 				</a>	

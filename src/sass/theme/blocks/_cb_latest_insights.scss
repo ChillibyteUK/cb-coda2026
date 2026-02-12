@@ -20,7 +20,7 @@
     }
   }
   &__pre-title {
-    border-bottom: 1px solid var(--col-lime-1000);
+    border-bottom: 1px solid hsl(var(--hsl-lime-1000) / 0.4) !important;
     padding-block: 0.5rem;
     color: var(--col-lime-800);
     font-weight: var(--fw-regular);
@@ -28,11 +28,11 @@
     line-height: 1;
   }
 
-  &.cb-latest-insights--front {
-    .cb-latest-insights__pre-title {
-      border-bottom: none;
-    }
-  }
+  // &.cb-latest-insights--front {
+  //   .cb-latest-insights__pre-title {
+  //     border-bottom: none;
+  //   }
+  // }
 
   &__image-wrapper {
     overflow: hidden;
@@ -80,10 +80,16 @@
     font-size: var(--fs-300);
     font-weight: var(--fw-semi);
     color: var(--col-primary-black);
+    margin-bottom: 0.5rem;
   }
-  &__excerpt {
-    font-size: var(--fs-200);
-    font-weight: var(--fw-light);
-    color: var(--col-neutral-800);
+  &__date {
+    text-transform: uppercase;
+    font-size: var(--fs-50);
+    color: var(--col-neutral-900);
   }
+  // &__excerpt {
+  //   font-size: var(--fs-200);
+  //   font-weight: var(--fw-light);
+  //   color: var(--col-neutral-800);
+  // }
 }

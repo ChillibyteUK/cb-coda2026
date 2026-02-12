@@ -49,8 +49,10 @@ $col-light: #f2f2f2;
   --col-lime-600: #94dd2c;
   // --col-lime-500: #adf448;
   --col-lime-400: #b8ff52; // main lime
-  --col-lime-300: #cafc83;
-  --col-lime-200: #ddfbb2;
+  --hsl-lime-300: 85 95% 75%; // #cafc83;
+  --col-lime-300: hsl(var(--hsl-lime-300));
+  --hsl-lime-200: 85 90% 84%; // #ddfbb2;
+  --col-lime-200: hsl(var(--hsl-lime-200));
   --col-lime-100: #eefed9;
 
   // Tertiary Action Red
