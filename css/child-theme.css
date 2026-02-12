@@ -11878,7 +11878,7 @@ header:has(.navbar-collapse.collapse.show) {
   padding-block: 1rem 0.5rem;
 }
 .text-page .post-content h2, .text-page .post-content .h2 {
-  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  border-top: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
   border-bottom: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
   color: var(--_colour);
   font-size: var(--fs-600);

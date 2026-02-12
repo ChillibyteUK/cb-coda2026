@@ -26,7 +26,7 @@
     }
 
     h2 {
-      border-top: 1px solid rgba(255, 255, 255, 0.4);
+      border-top: 1px solid hsl(var(--hsl-lime-1000) / 0.4) !important;
       border-bottom: 1px solid hsl(var(--hsl-lime-1000) / 0.4) !important;
       color: var(--_colour);
       font-size: var(--fs-600);
