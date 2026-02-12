@@ -50,7 +50,7 @@ get_header();
                 'post_status'    => array( 'publish' ),
                 'orderby'        => 'date',
                 'order'          => 'DESC', // Descending order.
-                'posts_per_page' => 3,    // Get all posts.
+                'posts_per_page' => -1,    // Get all posts.
             );
 			$q = new WP_Query( $args );
 
