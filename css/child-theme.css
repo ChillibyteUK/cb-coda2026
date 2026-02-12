@@ -11852,7 +11852,7 @@ header:has(.navbar-collapse.collapse.show) {
 
 .text-page {
   background-color: var(--col-white);
-  color: var(--col-white);
+  color: var(--col-primary-black);
   border-bottom: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
 }
 .text-page .post-title {
