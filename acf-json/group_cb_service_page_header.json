@@ -1,24 +1,24 @@
 {
     "key": "group_cb_service_page_header",
-    "title": "CB Service Page Header",
+    "title": "CB Page Header",
     "fields": [
         {
             "key": "field_cb_service_page_header_title",
-            "label": "CB Service Page Header",
+            "label": "CB Page Header",
             "name": "",
             "aria-label": "",
             "type": "message",
             "instructions": "",
             "required": 0,
-            "conditional_logic": false,
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
             "message": "",
-            "esc_html": 0,
-            "new_lines": "wpautop"
+            "new_lines": "wpautop",
+            "esc_html": 0
         },
         {
             "key": "field_698c66e71952b",
@@ -133,6 +133,23 @@
             "toggle": 0,
             "save_custom": 0,
             "custom_choice_button_text": "Add new choice"
+        },
+        {
+            "key": "field_698db2af2edaf",
+            "label": "Link",
+            "name": "link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
         }
     ],
     "location": [
@@ -154,5 +171,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1770810020
+    "modified": 1770894009
 }

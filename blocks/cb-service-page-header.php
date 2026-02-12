@@ -24,5 +24,13 @@ $balance = get_field( 'balance' ) ? 'text-wrap: balance;' : '';
 		<div class="fs-700 has-lime-1000-color w-constrained pb-5" style="--width: <?= esc_attr( $width ); ?>; <?= esc_attr( $balance ); ?>">
 			<?= wp_kses_post( get_field( 'content' ) ); ?>
 		</div>
+		<?php
+		if ( get_field( 'link' ) ) {
+			$l = get_field( 'link' );
+			?>
+		<a href="<?= esc_url( $l['url'] ); ?>" target="<?= esc_attr( $l['target'] ); ?>" class="id-button" tabindex="0"><?= esc_html( $l['title'] ); ?></a>
+			<?php
+		}
+		?>
 	</div>
 </section>
