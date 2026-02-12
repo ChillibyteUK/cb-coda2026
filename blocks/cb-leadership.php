@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || exit;
 ?>
 <section class="leadership has-neutral-300-background-color">
 	<div class="id-container px-4 px-md-5">
-		<div class="w-constrained py-5 fw-regular" style="--width:60ch;"><?= wp_kses_post( get_field( 'intro' ) ); ?></div>
+		<div class="w-constrained py-5 fw-regular fs-500" style="--width:60ch;"><?= wp_kses_post( get_field( 'intro' ) ); ?></div>
 		<div class="row g-5">
 			<?php
 			while ( have_rows( 'team' ) ) {
