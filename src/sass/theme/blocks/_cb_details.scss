@@ -3,6 +3,7 @@
     border-top: 1px solid var(--col-lime-1000);
     padding-top: 1rem;
     padding-bottom: 2rem;
+    font-size: var(--fs-400);
     .cb-details__title {
       font-size: var(--fs-500);
       color: var(--col-neutral-700);
@@ -11,6 +12,7 @@
   &__item:first-child {
     padding-bottom: 4rem;
     color: var(--col-lime-1000);
+    font-size: var(--fs-400);
     .cb-details__title {
       font-size: var(--fs-600);
       color: var(--col-lime-1000);

@@ -13029,6 +13029,7 @@ span a {
   border-top: 1px solid var(--col-lime-1000);
   padding-top: 1rem;
   padding-bottom: 2rem;
+  font-size: var(--fs-400);
 }
 .cb-details__item:not(:first-child) .cb-details__title {
   font-size: var(--fs-500);
@@ -13037,6 +13038,7 @@ span a {
 .cb-details__item:first-child {
   padding-bottom: 4rem;
   color: var(--col-lime-1000);
+  font-size: var(--fs-400);
 }
 .cb-details__item:first-child .cb-details__title {
   font-size: var(--fs-600);
