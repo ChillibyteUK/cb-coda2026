@@ -45,7 +45,6 @@ if ( $background ) {
 		<?php
 	}
 
-	$desc_class = '';
 	?>
 	<div class="id-container px-4 px-md-5 py-4">
 		<div class="row g-5 py-4">
@@ -62,7 +61,7 @@ if ( $background ) {
 				?>
 			</div>
 			<div class="col-md-5">
-				<div class="cb-pushthrough__desc <?= esc_attr( $desc_class ); ?>">
+				<div class="cb-pushthrough__desc fw-regular">
 					<?= wp_kses_post( get_field( 'description' ) ); ?>
 				</div>
 				<?php
