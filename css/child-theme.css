@@ -11856,10 +11856,12 @@ header:has(.navbar-collapse.collapse.show) {
   border-bottom: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
 }
 .text-page .post-title {
+  border-top: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
   border-bottom: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
   padding-block: 1rem;
 }
 .text-page .post-title h1, .text-page .post-title .h1 {
+  color: var(--col-lime-900);
   font-size: var(--fs-850);
   font-weight: var(--fw-light);
 }

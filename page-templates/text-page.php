@@ -10,15 +10,11 @@ get_header();
 
 ?>
 <main id="main" class="text-page">
-	<div class="post-title">
+	<section class="has-lime-1000-border-top has-lime-1000-border-bottom has-lime-900-text">
 		<div class="id-container px-4 px-md-5">
-			<div class="row">
-				<div class="col-md-9">
-					<h1 class="pt-1"><?= esc_html( get_the_title() ); ?></h1>
-				</div>
-			</div>
+			<h2 class="fs-300 fw-regular lh-tightest pt-4 pb-3 mb-0 text-uppercase" ><?= wp_kses_post( get_the_title() ); ?></h2>
 		</div>
-	</div>
+	</section>
 	<div class="id-container">
 		<div class="row post-content-row mb-5">
 			<div class="col-md-3"></div>
