@@ -29,7 +29,8 @@
   --col-purple-200: #e0deff;
   --col-purple-100: #f1f0ff;
   --col-lime-1100: #345a00;
-  --col-lime-1000: #3d6900;
+  --hsl-lime-1000: 85 100% 21%;
+  --col-lime-1000: hsl(var(--hsl-lime-1000));
   --hsl-lime-900: 85 100% 25%;
   --col-lime-900: hsl(var(--hsl-lime-900));
   --col-lime-800: #5e9f00;
@@ -13516,11 +13517,11 @@ for (; i < all.length; i++) {
 }
 */
 .has-lime-1000-border-top {
-  border-top: 1px solid var(--col-lime-1000) !important;
+  border-top: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
 }
 
 .has-lime-1000-border-bottom {
-  border-bottom: 1px solid var(--col-lime-1000) !important;
+  border-bottom: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
 }
 
 .service-parents {

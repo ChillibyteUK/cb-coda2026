@@ -40,7 +40,8 @@ $col-light: #f2f2f2;
 
   // Secondary Lime
   --col-lime-1100: #345a00;
-  --col-lime-1000: #3d6900;
+  --hsl-lime-1000: 85 100% 21%; // #3d6900;
+  --col-lime-1000: hsl(var(--hsl-lime-1000));
   --hsl-lime-900: 85 100% 25%;
   --col-lime-900: hsl(var(--hsl-lime-900)); // #4c8200;
   --col-lime-800: #5e9f00;

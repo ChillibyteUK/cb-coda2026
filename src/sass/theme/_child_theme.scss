@@ -444,11 +444,11 @@ for (; i < all.length; i++) {
 // }
 
 .has-lime-1000-border-top {
-  border-top: 1px solid var(--col-lime-1000) !important;
+  border-top: 1px solid hsl(var(--hsl-lime-1000) / 0.4) !important;
 }
 
 .has-lime-1000-border-bottom {
-  border-bottom: 1px solid var(--col-lime-1000) !important;
+  border-bottom: 1px solid hsl(var(--hsl-lime-1000) / 0.4) !important;
 }
 
 .service-parents {

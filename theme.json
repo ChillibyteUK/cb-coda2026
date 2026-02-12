@@ -163,7 +163,7 @@
         {
           "name": "lime-1000",
           "slug": "lime-1000",
-          "color": "#3d6900",
+          "color": "hsl(var(--hsl-lime-1000))",
           "origin": "theme"
         },
         {
