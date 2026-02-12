@@ -11850,6 +11850,47 @@ header:has(.navbar-collapse.collapse.show) {
   padding-block: 0.25rem;
 }
 
+.text-page {
+  background-color: var(--col-white);
+  color: var(--col-white);
+  border-bottom: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
+}
+.text-page .post-title {
+  border-bottom: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
+  padding-block: 1rem;
+}
+.text-page .post-title h1, .text-page .post-title .h1 {
+  font-size: var(--fs-850);
+  font-weight: var(--fw-light);
+}
+.text-page .post-content {
+  --_colour: var(--col-lime-900);
+}
+.text-page .post-content .container, .text-page .post-content .wp-block-group:not(.alignfull) {
+  padding-inline: 0;
+  margin-inline-end: 2rem;
+}
+.text-page .post-content > .container:first-of-type, .text-page .post-content > .wp-block-group:first-of-type:not(.alignfull) {
+  color: var(--_colour);
+  font-size: var(--fs-500);
+  border-bottom: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
+  margin-bottom: 2rem;
+  padding-block: 1rem 0.5rem;
+}
+.text-page .post-content h2, .text-page .post-content .h2 {
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
+  color: var(--_colour);
+  font-size: var(--fs-600);
+  font-weight: var(--fw-light);
+  margin-block: 2rem;
+  padding-block: 0.25rem;
+}
+.text-page .post-content .table, .wp-block-table .text-page .post-content table,
+.text-page .post-content .wp-block-table table {
+  color: var(--col-primary-black) !important;
+}
+
 .skip-link {
   position: absolute;
   top: -100px;
