@@ -49,7 +49,7 @@ if ( $background ) {
 	?>
 	<div class="id-container px-4 px-md-5 py-4">
 		<div class="row g-5 py-4">
-			<div class="col-md-6">
+			<div class="col-md-7">
 				<h2 class="w-constrained" style="--width:25ch";><?= esc_html( get_field( 'title' ) ); ?></h2>
 				<?php
 				if ( get_field( 'left_content' ) ) {
@@ -61,7 +61,7 @@ if ( $background ) {
 				}
 				?>
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-5">
 				<div class="cb-pushthrough__desc <?= esc_attr( $desc_class ); ?>">
 					<?= wp_kses_post( get_field( 'description' ) ); ?>
 				</div>

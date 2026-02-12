@@ -13,8 +13,8 @@ $col-light: #f2f2f2;
   --col-white: #fff;
 
   // Primary Base Neutrals
-  --col-neutral-1100: #22211e;
-  --col-neutral-1000: #363531;
+  // --col-neutral-1100: #22211e;
+  // --col-neutral-1000: #363531;
   --col-neutral-900: #505049;
   --col-neutral-800: #5e5d55;
   --hsl-neutral-800: 53 5% 35%;
@@ -27,16 +27,16 @@ $col-light: #f2f2f2;
   --col-neutral-100: #f8f7f0;
 
   // Secondary Electric Purple
-  --col-purple-1000: #190a83;
+  // --col-purple-1000: #190a83;
   --col-purple-900: #2f13ba; // main purple
-  --col-purple-800: #4c35d0;
-  --col-purple-700: #7162e1;
-  --col-purple-600: #8b7ff0;
-  --col-purple-500: #a49bfd;
-  --col-purple-400: #bcb7ff;
-  --col-purple-300: #d0ccff;
-  --col-purple-200: #e0deff;
-  --col-purple-100: #f1f0ff;
+  // --col-purple-800: #4c35d0;
+  // --col-purple-700: #7162e1;
+  // --col-purple-600: #8b7ff0;
+  // --col-purple-500: #a49bfd;
+  // --col-purple-400: #bcb7ff;
+  // --col-purple-300: #d0ccff;
+  // --col-purple-200: #e0deff;
+  // --col-purple-100: #f1f0ff;
 
   // Secondary Lime
   --col-lime-1100: #345a00;
@@ -45,25 +45,25 @@ $col-light: #f2f2f2;
   --hsl-lime-900: 85 100% 25%;
   --col-lime-900: hsl(var(--hsl-lime-900)); // #4c8200;
   --col-lime-800: #5e9f00;
-  --col-lime-700: #6bb600;
+  // --col-lime-700: #6bb600;
   --col-lime-600: #94dd2c;
-  --col-lime-500: #adf448;
+  // --col-lime-500: #adf448;
   --col-lime-400: #b8ff52; // main lime
   --col-lime-300: #cafc83;
   --col-lime-200: #ddfbb2;
   --col-lime-100: #eefed9;
 
   // Tertiary Action Red
-  --col-red-1000: #6e0606;
-  --col-red-900: #850d0d;
-  --col-red-800: #a51616;
-  --col-red-700: #c21d1d;
-  --col-red-600: #e03030; // main red
-  --col-red-500: #ec5a5a;
-  --col-red-400: #ff8989;
-  --col-red-300: #ffc0c0;
-  --col-red-200: #ffdfdf;
-  --col-red-100: #fff0f0;
+  // --col-red-1000: #6e0606;
+  // --col-red-900: #850d0d;
+  // --col-red-800: #a51616;
+  // --col-red-700: #c21d1d;
+  // --col-red-600: #e03030; // main red
+  // --col-red-500: #ec5a5a;
+  // --col-red-400: #ff8989;
+  // --col-red-300: #ffc0c0;
+  // --col-red-200: #ffdfdf;
+  // --col-red-100: #fff0f0;
 
   --grad-main: linear-gradient(
     to bottom,
