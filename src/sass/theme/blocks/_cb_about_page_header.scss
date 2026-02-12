@@ -25,8 +25,8 @@
     font-weight: var(--fw-light);
     line-height: 1;
     color: var(--col-lime-1000);
-    border-top: 1px solid var(--col-lime-1000);
-    border-bottom: 1px solid var(--col-lime-1000);
+    border-top: 1px solid hsl(var(--hsl-lime-1000) / 1) !important;
+    border-bottom: 1px solid hsl(var(--hsl-lime-1000) / 1) !important;
     padding-top: 1rem;
     padding-bottom: 4rem;
     margin-bottom: 2rem;

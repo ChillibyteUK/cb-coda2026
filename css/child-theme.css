@@ -12938,7 +12938,7 @@ span a {
   padding-top: 0.5rem;
 }
 .lined-list li:not(:last-child) {
-  border-bottom: 1px solid var(--col-lime-1000);
+  border-bottom: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
 }
 
 .cb-about-page-header {
@@ -12971,8 +12971,8 @@ span a {
   font-weight: var(--fw-light);
   line-height: 1;
   color: var(--col-lime-1000);
-  border-top: 1px solid var(--col-lime-1000);
-  border-bottom: 1px solid var(--col-lime-1000);
+  border-top: 1px solid hsl(var(--hsl-lime-1000)/1) !important;
+  border-bottom: 1px solid hsl(var(--hsl-lime-1000)/1) !important;
   padding-top: 1rem;
   padding-bottom: 4rem;
   margin-bottom: 2rem;
@@ -13047,7 +13047,7 @@ span a {
 }
 
 .cb-details__item:not(:first-child) {
-  border-top: 1px solid var(--col-lime-1000);
+  border-top: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
   padding-top: 1rem;
   padding-bottom: 2rem;
   font-size: var(--fs-400);
@@ -13080,14 +13080,14 @@ span a {
 .leadership__name {
   color: var(--col-lime-1100);
   font-size: var(--fs-500);
-  border-top: 1px solid var(--col-lime-1000);
-  border-bottom: 1px solid var(--col-lime-1000);
+  border-top: 1px solid hsl(var(--hsl-lime-1000)/1) !important;
+  border-bottom: 1px solid hsl(var(--hsl-lime-1000)/1) !important;
   padding-block: 0.25rem 0;
 }
 .leadership__role {
   color: var(--col-neutral-900);
   font-size: var(--fs-300);
-  border-bottom: 1px solid var(--col-lime-1000);
+  border-bottom: 1px solid hsl(var(--hsl-lime-1000)/1) !important;
   padding-block: 0.25rem 0;
   margin-bottom: 1.5rem;
 }
