@@ -11528,7 +11528,7 @@ header a:hover, header a:focus, header a:focus-visible,
 header a.nav-link:hover,
 header a.nav-link:focus,
 header a.nav-link:focus-visible {
-  color: var(--col-lime-900);
+  color: var(--col-primary-black);
   text-decoration: none;
   font-weight: var(--fw-semi);
 }
