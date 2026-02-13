@@ -214,3 +214,21 @@ function cb_ajax_search_posts() {
 
 add_action( 'wp_ajax_search_posts', 'cb_ajax_search_posts' );
 add_action( 'wp_ajax_nopriv_search_posts', 'cb_ajax_search_posts' );
+
+/**
+ * Add data-text attribute to primary nav links for width reservation.
+ *
+ * @param array  $atts Link attributes.
+ * @param object $item Menu item.
+ * @param object $args Menu args.
+ * @return array
+ */
+function cb_add_primary_nav_data_text( $atts, $item, $args ) {
+	if ( isset( $args->theme_location ) && 'primary_nav' === $args->theme_location ) {
+		$label             = wp_strip_all_tags( $item->title );
+		$atts['data-text'] = $label;
+	}
+
+	return $atts;
+}
+add_filter( 'nav_menu_link_attributes', 'cb_add_primary_nav_data_text', 10, 3 );

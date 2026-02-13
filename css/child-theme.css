@@ -11517,7 +11517,7 @@ header a.nav-link {
   font-size: var(--fs-200);
   font-weight: var(--fw-light);
   color: var(--col-primary-black);
-  transition: color 0.3s ease;
+  transition: color var(--transition), font-weight var(--transition);
   display: inline-block;
   text-decoration: none;
   padding: 0;
@@ -11529,6 +11529,21 @@ header a.nav-link:focus,
 header a.nav-link:focus-visible {
   color: var(--col-lime-900);
   text-decoration: none;
+  font-weight: var(--fw-semi);
+}
+header .navbar-nav .nav-link {
+  display: inline-grid;
+  place-items: center;
+  text-align: center;
+}
+header .navbar-nav .nav-link::after {
+  content: attr(data-text);
+  font-weight: var(--fw-semi);
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  pointer-events: none;
 }
 header .logo-clip {
   overflow: hidden;
