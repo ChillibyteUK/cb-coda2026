@@ -19,10 +19,10 @@ $block_id = $block['anchor'] ?? $block['id'];
 			?>
 			<div class="cb-details__item">
 				<div class="row g-5">
-					<div class="col-md-7 cb-details__title">
+					<div class="col-md-6 cb-details__title">
 						<?= esc_html( get_sub_field( 'title' ) ); ?>
 					</div>
-					<div class="col-md-5 cb-details__content fw-regular">
+					<div class="col-md-6 cb-details__content fw-regular">
 						<?= wp_kses_post( get_sub_field( 'content' ) ); ?>
 					</div>
 				</div>
