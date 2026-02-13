@@ -12994,7 +12994,7 @@ span a {
   margin-bottom: 2rem;
 }
 .cb-about-page-header__intro-text p {
-  font-size: var(--fs-600);
+  font-size: var(--fs-500);
 }
 .cb-about-page-header__intro-text a {
   color: var(--col-lime-900);

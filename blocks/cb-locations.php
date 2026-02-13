@@ -21,10 +21,10 @@ $section_id = $block['anchor'] ?? $block['id'];
 			$weight = $first ? 'fw-regular' : 'fw-regular';
 			?>
 		<div class="row g-5 has-lime-1000-border-top mt-3 pb-5 mb-4">
-			<div class="col-md-7 has-700-font-size fw-light">
+			<div class="col-md-7 mt-2 has-700-font-size fw-light">
 				<?= esc_html( get_sub_field( 'location' ) ); ?>
 			</div>
-			<div class="col-md-5 lh-normal has-400-font-size <?= esc_attr( $weight ); ?>">
+			<div class="col-md-5 mt-2 lh-normal has-400-font-size <?= esc_attr( $weight ); ?>">
 				<?= wp_kses_post( get_sub_field( 'address' ) ); ?>
 			</div>
 		</div>
