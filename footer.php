@@ -46,7 +46,7 @@ defined( 'ABSPATH' ) || exit;
 			</div>
 			<!-- 4. Our Brands -->
             <div class="col-12 col-sm-6 col-md-4 col-lg-2 order-6 order-md-7 order-lg-4">
-				<div class="footer-title mb-4"><a href="/about/#brands">Identity Brands</a></div>
+				<div class="footer-title mb-4">Identity Brands</div>
 				<?=
 				wp_nav_menu(
 					array(

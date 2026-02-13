@@ -51,6 +51,7 @@
   --fw-light: 300; /* Light */
   --lh-tightest: 1;
   --lh-tight: 1.1;
+  --lh-snug: 1.2;
   --lh-normal: 1.5;
   /* =========================
     TYPOGRAPHY
@@ -11208,7 +11209,7 @@ body,
 .body {
   font-family: var(--ff-body);
   font-size: var(--fs-body);
-  font-weight: var(--fw-light);
+  font-weight: var(--fw-regular);
   line-height: var(--lh-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -11676,7 +11677,7 @@ header:has(.navbar-collapse.collapse.show) {
   transition: color 0.3s ease;
 }
 .footer a:hover {
-  color: var(--col-neutral-500);
+  color: var(--col-lime-300);
 }
 .footer__logo {
   border-top: 1px solid rgba(255, 255, 255, 0.4);
@@ -11832,10 +11833,6 @@ header:has(.navbar-collapse.collapse.show) {
   border-bottom: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
   padding-block: 1rem;
 }
-.single-blog .post-title h1, .single-blog .post-title .h1 {
-  font-size: var(--fs-850);
-  font-weight: var(--fw-light);
-}
 .single-blog .post-date-row {
   border-top: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
   padding-bottom: 2rem;
@@ -11853,6 +11850,7 @@ header:has(.navbar-collapse.collapse.show) {
 .single-blog .post-content .container:first-of-type:not([class*=post-date]), .single-blog .post-content .wp-block-group:first-of-type:not([class*=post-date]):not(.alignfull) {
   color: var(--_colour);
   font-size: var(--fs-500);
+  font-weight: var(--fw-light);
   border-bottom: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
   margin-bottom: 2rem;
   padding-block: 1rem 0.5rem;
@@ -12706,22 +12704,17 @@ span a {
 
 .work-index-hero h1, .work-index-hero .h1 {
   border-top: 1px solid hsl(var(--hsl-lime-900)/0.4);
-  font-size: var(--fs-850);
-  font-weight: var(--fw-light);
   color: var(--col-primary-black);
 }
 .work-index-hero h2, .work-index-hero .h2 {
   border-top: 1px solid hsl(var(--hsl-lime-900)/0.4);
   border-bottom: 1px solid hsl(var(--hsl-lime-900)/0.4);
-  font-size: var(--fs-500);
   color: var(--col-neutral-900);
-  font-weight: var(--fw-light);
   margin-bottom: 0;
 }
 .work-index-hero__intro p {
   max-width: 40ch;
   text-wrap: balance;
-  font-size: var(--fs-700);
   color: var(--col-lime-1000);
 }
 .work-index-hero__background {
@@ -12763,11 +12756,7 @@ span a {
   z-index: 3;
   position: relative;
 }
-.work-index-hero__title {
-  font-size: var(--fs-700);
-  font-weight: var(--fw-semi);
-}
-.work-index-hero__desc {
+.work-index-hero__card-desc {
   font-size: var(--fs-600);
   font-weight: var(--fw-light);
   color: var(--col-neutral-500);
@@ -13040,7 +13029,7 @@ span a {
 }
 .cb-pushthrough__desc {
   font-size: var(--fs-500);
-  line-height: 1.5;
+  line-height: var(--lh-snug);
   padding-bottom: 1rem;
   text-wrap: balance;
 }
@@ -13094,6 +13083,7 @@ span a {
 .leadership__name {
   color: var(--col-lime-1100);
   font-size: var(--fs-500);
+  font-weight: var(--fw-light);
   border-top: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
   border-bottom: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
   padding-block: 0.25rem 0;
@@ -13101,6 +13091,7 @@ span a {
 .leadership__role {
   color: var(--col-neutral-900);
   font-size: var(--fs-300);
+  font-weight: var(--fw-light);
   border-bottom: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
   padding-block: 0.25rem 0;
   margin-bottom: 1.5rem;

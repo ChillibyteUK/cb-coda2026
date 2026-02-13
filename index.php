@@ -14,7 +14,7 @@ get_header();
 <main id="main" class="news-insights">
 	<section class="news-insights-hero">
 		<div class="has-lime-1000-border-top has-lime-1000-border-bottom mt-4">
-			<h1 class="id-container px-4 px-md-5 fs-800 fw-light has-lime-1100-color lh-tightest pt-2 pb-1">
+			<h1 class="id-container px-4 px-md-5 fs-850 fw-light has-lime-1100-color lh-tightest pt-2 pb-1">
 				Insights &amp; perspectives
 			</h1>
 		</div>
@@ -27,7 +27,7 @@ get_header();
 		</div>
 		<div class="id-container px-4 px-md-5 pt-1 pb-5">
 			<div class="row">
-				<div class="col-md-9 offset-md-3 fs-500 pb-5">
+				<div class="col-md-9 offset-md-3 fs-500 fw-light pb-5">
 					<?php
 					// get content from page_for_posts.
 					echo wp_kses_post(

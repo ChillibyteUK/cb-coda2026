@@ -155,10 +155,6 @@
   .post-title {
     border-bottom: 1px solid hsl(var(--hsl-lime-1000) / 0.4) !important;
     padding-block: 1rem;
-    h1 {
-      font-size: var(--fs-850);
-      font-weight: var(--fw-light);
-    }
   }
   .post-date-row {
     border-top: 1px solid hsl(var(--hsl-lime-1000) / 0.4) !important;
@@ -178,6 +174,7 @@
     .container:first-of-type:not([class*="post-date"]) {
       color: var(--_colour);
       font-size: var(--fs-500);
+      font-weight: var(--fw-light);
       border-bottom: 1px solid hsl(var(--hsl-lime-1000) / 0.4) !important;
       margin-bottom: 2rem;
       padding-block: 1rem 0.5rem;

@@ -30,12 +30,12 @@ if ( ! $bg_case_study ) {
 ?>
 <section class="work-index-hero">
 	<div class="work-index-hero__title my-4">
-		<h1>
+		<h1 class="has-850-font-size fw-light">
 			<div class="id-container px-4 px-md-5 pt-2">
 				Our work
 			</div>
 		</h1>
-		<h2>
+		<h2 class="has-500-font-size fw-light">
 			<div class="id-container px-4 px-md-5 pt-2 pb-1">
 				Where experience changes healthcare
 			</div>
@@ -43,7 +43,7 @@ if ( ! $bg_case_study ) {
 	</div>
 	<div class="work-index-hero__intro grad-main pt-1 pb-5">
 		<div class="id-container px-4 px-md-5">
-			<p>
+			<p class="has-700-font-size fw-light">
 				From global congresses to investigator meetings, we deliver healthcare experiences with technical precision and creative clarity. Every programme is designed to bring complex science to life – whether live, hybrid, or digital. 
 			</p>
 		</div>
@@ -64,10 +64,10 @@ if ( ! $bg_case_study ) {
 		?>
 			<div class="overlay"></div>
 			<div class="work-index-hero__content px-4 px-md-5">
-				<div class="work-index-hero__title">
+				<div class="work-index-hero__card-title has-700-font-size fw-semi">
 					<?php echo esc_html( get_the_title( $bg_case_study ) ); ?> <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/arrow-wh.svg' ); ?>" width=23 height=21 alt="" class="cb-services-nav__item-icon" />
 				</div>
-				<div class="work-index-hero__desc">
+				<div class="work-index-hero__card-desc">
 					<?php
 					// get the case_study_subtitle field from the cb-case-study-hero block if available.
 					if ( ! function_exists( 'cb_find_hero_subtitle' ) ) {
