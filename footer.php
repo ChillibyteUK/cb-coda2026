@@ -19,10 +19,6 @@ defined( 'ABSPATH' ) || exit;
 			<div class="col-12 col-md-6 col-lg-4 order-9 order-md-1">
 				<!-- <div class="footer-title--lg mb-3">Connect. Share. Follow.</div> -->
 				<?= do_shortcode( '[social_icons class="fa-2x"]' ); ?>
-				<strong>
-					<div class="mb-5">Let's talk.</div>
-					<?= do_shortcode( '[contact_email]' ); ?>
-				</strong>
 			</div>
 			<!-- 2. Services -->
 			<div class="col-12 col-sm-6 col-md-4 col-lg-2 order-2 order-md-3 order-lg-2">
@@ -75,6 +71,9 @@ defined( 'ABSPATH' ) || exit;
 			<!-- ROW 2 -->
 			<!-- 6. Email -->
 			<div class="col-12 col-md-4 order-8 order-md-2 order-lg-6">
+				<strong>
+					<?= do_shortcode( '[contact_email]' ); ?>
+				</strong>
 			</div>
 			<!-- 7. Work -->
 			<div class="col-12 col-sm-6 col-md-4 col-lg-2 order-1 order-md-5 order-lg-7">

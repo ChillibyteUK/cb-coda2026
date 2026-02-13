@@ -168,8 +168,8 @@ if ( ! $bg_case_study ) {
 	*/
 	?>
 	<div class="has-lime-1000-border-bottom">
-		<div class="id-container px-4 px-md-5">
-			<h2 class="fs-300 fw-regular lh-tightest pt-4 pb-3 mb-0 text-uppercase" >Featured Work</h2>
+		<div class="id-container py-3 px-4 px-md-5">
+			<h2 class="fs-300 fw-regular lh-tightest pt-1 pb-0 mb-0 text-uppercase" >Featured Work</h2>
 		</div>
 	</div>
 	<div class="id-container px-4 px-md-5">

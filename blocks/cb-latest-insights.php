@@ -18,7 +18,7 @@ if ( is_front_page() ) {
 ?>
 <section id="<?php echo esc_attr( $block_id ); ?>" class="cb-latest-insights <?= esc_attr( $class ); ?>">
 	<div class="cb-latest-insights__pre-title">
-		<div class="id-container pt-4 pb-3 px-4 px-md-5">
+		<div class="id-container pt-1 pb-0 px-4 px-md-5">
 			LATEST NEWS &amp; INSIGHTS
 		</div>
 	</div>
