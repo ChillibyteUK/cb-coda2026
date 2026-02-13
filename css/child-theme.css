@@ -11856,10 +11856,10 @@ header:has(.navbar-collapse.collapse.show) {
   padding-block: 1rem 0.5rem;
 }
 .single-blog .post-content h2, .single-blog .post-content .h2 {
-  border-top: 1px solid var(--col-lime-1000);
+  border-top: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
   border-bottom: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
   color: var(--_colour);
-  font-size: var(--fs-600);
+  font-size: var(--fs-500);
   font-weight: var(--fw-light);
   margin-block: 2rem;
   padding-block: 0.25rem;
