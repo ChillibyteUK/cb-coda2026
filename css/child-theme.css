@@ -12993,9 +12993,6 @@ span a {
   padding-bottom: 4rem;
   margin-bottom: 2rem;
 }
-.cb-about-page-header__intro-text {
-  max-width: 80ch;
-}
 .cb-about-page-header__intro-text p {
   font-size: var(--fs-600);
 }
