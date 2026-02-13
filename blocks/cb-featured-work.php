@@ -40,7 +40,7 @@ if ( $q->have_posts() ) {
 			FEATURED WORK
 		</div>
 	</div>
-	<div class="id-container pb-2">
+	<div class="id-container px-4 px-md-5 pb-2">
 		<div class="row g-2">
 		<?php
 		while ( $q->have_posts() ) {

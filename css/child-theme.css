@@ -75,8 +75,8 @@
   --fs-950: clamp(3.4375rem, 1rem + 4vw, 6.25rem); /* 55→112px */
   /* === Utilities === */
   --transition: 250ms ease-out;
-  --h-top: 72px;
-  --h-top-desktop: 130px;
+  --h-top: 57px;
+  --h-top-desktop: 57px;
 }
 
 /*!
@@ -12713,8 +12713,7 @@ span a {
   margin-bottom: 0;
 }
 .work-index-hero__intro p {
-  max-width: 40ch;
-  text-wrap: balance;
+  max-width: 38ch;
   color: var(--col-lime-1000);
 }
 .work-index-hero__background {

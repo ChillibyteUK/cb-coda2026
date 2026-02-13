@@ -75,8 +75,8 @@
   --fs-950: clamp(3.4375rem, 1rem + 4vw, 6.25rem); /* 55→112px */
   /* === Utilities === */
   --transition: 250ms ease-out;
-  --h-top: 72px;
-  --h-top-desktop: 130px;
+  --h-top: 57px;
+  --h-top-desktop: 57px;
 }
 
 :root {
@@ -155,8 +155,8 @@
   --fs-950: clamp(3.4375rem, 1rem + 4vw, 6.25rem); /* 55→112px */
   /* === Utilities === */
   --transition: 250ms ease-out;
-  --h-top: 72px;
-  --h-top-desktop: 130px;
+  --h-top: 57px;
+  --h-top-desktop: 57px;
 }
 
 *,
