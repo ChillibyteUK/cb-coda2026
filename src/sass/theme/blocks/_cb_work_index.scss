@@ -1,4 +1,6 @@
 .work-index-hero {
+  position: relative;
+  z-index: 1;
   h1 {
     border-top: 1px solid hsl(var(--hsl-lime-900) / 0.4);
     color: var(--col-primary-black);
@@ -47,6 +49,16 @@
     pointer-events: none;
     z-index: 1;
   }
+  .bottom-overlay {
+    grid-area: stack;
+    width: 100%;
+    height: 18px;
+    background-color: var(--col-lime-200);
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 1;
+    align-self: end;
+  }
   &__content {
     grid-area: stack;
     align-self: flex-end;
@@ -70,8 +82,8 @@
 }
 
 .cb-work-index {
-  background-color: var(--col-primary-black);
-  color: #fff;
+  background-color: var(--col-lime-200);
+  color: var(--col-lime-900);
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   position: relative;
   &__pre-title {

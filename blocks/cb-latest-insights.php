@@ -87,6 +87,14 @@ if ( is_front_page() ) {
 						?>
 					</div>
 					<div class="cb-latest-insights__content">
+						<div class="insight-type-grid__category">
+							<?php
+							$categories = get_the_category();
+							if ( ! empty( $categories ) ) {
+								echo esc_html( $categories[0]->name );
+							}
+							?>
+						</div>
 						<div class="cb-latest-insights__title">
 							<?php the_title(); ?>
 						</div>

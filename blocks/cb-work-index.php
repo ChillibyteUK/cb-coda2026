@@ -63,6 +63,7 @@ if ( ! $bg_case_study ) {
 		}
 		?>
 			<div class="overlay"></div>
+			<div class="bottom-overlay"></div>
 			<div class="work-index-hero__content px-4 px-md-5">
 				<div class="work-index-hero__card-title has-700-font-size fw-semi">
 					<?php echo esc_html( get_the_title( $bg_case_study ) ); ?> <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/arrow-wh.svg' ); ?>" width=23 height=21 alt="" class="cb-services-nav__item-icon" />
@@ -166,7 +167,12 @@ if ( ! $bg_case_study ) {
 	// phpcs:enable 
 	*/
 	?>
-	<div class="id-container">
+	<div class="has-lime-1000-border-bottom">
+		<div class="id-container px-4 px-md-5">
+			<h2 class="fs-300 fw-regular lh-tightest pt-4 pb-3 mb-0 text-uppercase" >Featured Work</h2>
+		</div>
+	</div>
+	<div class="id-container px-4 px-md-5">
 		<div class="cb-work-index__cards row g-2">
 			<?php
 

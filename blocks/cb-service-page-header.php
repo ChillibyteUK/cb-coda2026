@@ -26,7 +26,7 @@ $balance = get_field( 'balance' ) ? 'text-wrap: balance;' : '';
 		<?php
 	}
 	?>
-	<div class="id-container px-4 px-md-5 pt-1 pb-5">
+	<div class="id-container px-4 px-md-5 pt-5 pb-5">
 		<div class="fs-700 fw-light has-lime-1000-color w-constrained pb-5" style="--width: <?= esc_attr( $width ); ?>; <?= esc_attr( $balance ); ?>">
 			<?= wp_kses_post( get_field( 'content' ) ); ?>
 		</div>

@@ -8,7 +8,7 @@
 defined( 'ABSPATH' ) || exit;
 
 ?>
-<section class="feature-list id-container py-5">
+<section class="feature-list id-container pb-5">
 	<div class="mx-4 mx-md-5 has-lime-1000-border-top py-3">
 		<div class="row g-5">
 			<div class="col-md-6">

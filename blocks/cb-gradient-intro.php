@@ -10,6 +10,6 @@ defined( 'ABSPATH' ) || exit;
 ?>
 <section class="gradient-intro grad-main py-5">
 	<div class="id-container px-4 px-md-5">
-		<div class="fs-500 fw-regular w-constrained" style="--width: 60ch"><?= wp_kses_post( get_field( 'content' ) ); ?></div>
+		<div class="fs-500 fw-regular w-constrained" style="--width: 62ch"><?= wp_kses_post( get_field( 'content' ) ); ?></div>
 	</div>
 </section>
