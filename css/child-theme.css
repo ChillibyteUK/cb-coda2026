@@ -12522,7 +12522,7 @@ span a {
   font-size: var(--fs-850);
   font-weight: var(--fw-light);
   line-height: 1.1;
-  color: var(--col-lime-900);
+  color: var(--col-primary-black);
 }
 .cb-cta__content {
   font-size: var(--fs-600);
