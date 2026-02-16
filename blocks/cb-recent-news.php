@@ -60,7 +60,7 @@ switch ( $blog_type ) {
 		$background    = 'has-neutral-100-background-color';
 		$section_title = 'has-lime-1100-color';
 		$arrow         = '/img/arrow-nbk.svg';
-		$block_title   = 'INSIGHTS &amp; PERSPECTIVES';
+		$block_title   = 'RECENT INSIGHTS';
 		break;
 }
 ?>
