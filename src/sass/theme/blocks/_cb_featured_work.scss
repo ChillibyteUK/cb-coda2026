@@ -21,6 +21,10 @@
     &:hover {
       text-decoration: none;
       color: initial;
+
+      .cb-featured-work__image {
+        transform: scale(1.05);
+      }
     }
   }
   .cb-featured-work__card.has_video:hover .cb-featured-work__image {
@@ -30,7 +34,8 @@
   &__image {
     grid-area: stack;
     aspect-ratio: 16 / 9;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease,
+      transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 2;
     object-fit: cover;
   }

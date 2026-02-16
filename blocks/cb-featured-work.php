@@ -35,12 +35,12 @@ $q = new WP_Query( $query_args );
 if ( $q->have_posts() ) {
 	?>
 <section id="<?php echo esc_attr( $block_id ); ?>" class="cb-featured-work">
-	<div class="cb-featured-work__pre-title">
-		<div class="id-container py-4 px-4 px-md-5">
-			FEATURED WORK
+	<div class="has-lime-1000-border-bottom">
+		<div class="id-container py-3 px-4 px-md-5">
+			<h2 class="fs-300 fw-regular has-lime-900-color lh-tightest pt-1 pb-0 mb-0 text-uppercase" >Featured Work</h2>
 		</div>
 	</div>
-	<div class="id-container px-4 px-md-5 pb-2">
+	<div class="id-container px-4 px-md-5 py-4">
 		<div class="row g-2">
 		<?php
 		while ( $q->have_posts() ) {
