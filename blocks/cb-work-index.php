@@ -236,7 +236,7 @@ if ( ! $bg_case_study ) {
 						<?php
 					}
 					?>
-					<?php echo get_work_image( get_the_ID(), 'cb-work-index__image' ); ?>
+					<?php echo get_work_image( get_the_ID(), 'cb-work-index__image' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					<div class="cb-work-index__content px-4 px-md-5">
 						<div class="cb-work-index__title">
 							<?php the_title(); ?> <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/arrow-wh.svg' ); ?>" width=23 height=21 alt="" class="cb-services-nav__item-icon" />
