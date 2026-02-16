@@ -14,7 +14,7 @@ $block_id = $block['id'] ?? '';
 ?>
 <div id="<?php echo esc_attr( $block_id ); ?>" class="cb-full-image">
 	<?php
-	if ( get_field( 'top_gradient' ) ) {
+	if ( get_field( 'top_border' ) ) {
 		?>
 		<div class="overlay"></div>
 		<?php
