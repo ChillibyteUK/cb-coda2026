@@ -172,7 +172,7 @@ if ( ! $bg_case_study ) {
 			<h2 class="fs-300 fw-regular lh-tightest pt-1 pb-0 mb-0 text-uppercase" >Featured Work</h2>
 		</div>
 	</div>
-	<div class="id-container px-4 px-md-5">
+	<div class="id-container px-4 px-md-5 py-4">
 		<div class="cb-work-index__cards row g-2">
 			<?php
 
