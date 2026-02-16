@@ -40,7 +40,20 @@ switch ( $post_style ) {
 		<?php
 		if ( get_the_post_thumbnail( get_the_ID() ) ) {
 			?>
-			<?= get_the_post_thumbnail( get_the_ID(), 'full', array( 'class' => 'post-hero-image', 'alt' => get_post_meta( get_post_thumbnail_id( get_the_ID() ), '_wp_attachment_image_alt', true ) ) ); ?>
+			<?=
+			get_the_post_thumbnail(
+				get_the_ID(),
+				'full',
+				array(
+					'class' => 'post-hero-image',
+					'alt'   => get_post_meta(
+						get_post_thumbnail_id( get_the_ID() ),
+						'_wp_attachment_image_alt',
+						true
+					),
+				)
+			);
+			?>
 			<?php
 		} else {
 			?>
@@ -87,6 +100,11 @@ switch ( $post_style ) {
 		</div>
 	</div>
 
+	<section class="recent-news">
+		<?php
+		get_template_part( 'blocks/cb-recent-news' );
+		?>
+	</section>
 	<?php
 
 	// include cta template.

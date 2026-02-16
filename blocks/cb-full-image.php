@@ -21,6 +21,20 @@ $block_id = $block['id'] ?? '';
 			<?php
 		}
 		?>
-		<?= wp_get_attachment_image( get_field( 'image' ), 'full', false, array( 'class' => 'img-fluid', 'alt' => get_post_meta( get_field( 'image' ), '_wp_attachment_image_alt', true ) ) ); ?>
+		<?=
+		wp_get_attachment_image(
+			get_field( 'image' ),
+			'full',
+			false,
+			array(
+				'class' => 'img-fluid',
+				'alt'   => get_post_meta(
+					get_field( 'image' ),
+					'_wp_attachment_image_alt',
+					true
+				),
+			)
+		);
+		?>
 	</div>
 </div>
