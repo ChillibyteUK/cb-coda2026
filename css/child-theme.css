@@ -22714,7 +22714,7 @@ span a {
   top: 0;
   left: 0;
   z-index: -1;
-  background: url(../img/BlurEffect_03_2500px.webp) center/cover no-repeat fixed;
+  background: url(../img/CODA_BG2.webp) center/cover no-repeat fixed;
 }
 .cb-services-nav__container {
   background-color: rgba(255, 255, 255, 0.1);
@@ -23543,7 +23543,7 @@ span a {
   top: 0;
   left: 0;
   z-index: -1;
-  background: url(../img/BlurEffect_03_2500px.webp) center/cover no-repeat fixed;
+  background: url(../img/CODA_BG2.webp) center/cover no-repeat fixed;
 }
 .delivered__container {
   background-color: rgba(255, 255, 255, 0.1);
@@ -23570,7 +23570,7 @@ span a {
   gap: 0;
 }
 .delivered__item {
-  color: var(--col-primary-black);
+  color: var(--col-white);
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   font-weight: var(--fw-light);
   font-size: var(--fs-500);
