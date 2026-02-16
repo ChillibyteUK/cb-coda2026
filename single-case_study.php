@@ -11,11 +11,11 @@ get_header();
 ?>
 <main id="main" class="case-study">
 	<div class="has-lime-1000-border-top has-lime-1000-border-bottom mt-4">
-		<div class="id-container px-4 px-md-5 fs-800 has-lime-1100-color lh-tightest pt-2 pb-1">Our work</div>
+		<h1 class="id-container px-4 px-md-5 fs-800 has-lime-1100-color lh-tightest pt-2 pb-1"><?= get_the_title(); ?></h1>
 	</div>
 	<div class="has-lime-1000-border-bottom mb-4">
 		<div class="id-container px-4 px-md-5">
-			<h1 class="fw-light has-neutral-700-color fs-500 lh-tightest pt-2 pb-1"><?= get_the_title(); ?></h1>
+			<div class="fw-light has-neutral-700-color fs-500 lh-tightest pt-2 pb-1">Top 5 Pharma Company</div>
 		</div>
 	</div>
     <?php
