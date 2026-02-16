@@ -6,6 +6,7 @@
   --hsl-primary-black: 60 4% 5%;
   --col-primary-black: hsl(var(--hsl-primary-black));
   --col-white: #fff;
+  --col-neutral-1100: #22211e;
   --col-neutral-900: #505049;
   --col-neutral-800: #5e5d55;
   --hsl-neutral-800: 53 5% 35%;
@@ -86,6 +87,7 @@
   --hsl-primary-black: 60 4% 5%;
   --col-primary-black: hsl(var(--hsl-primary-black));
   --col-white: #fff;
+  --col-neutral-1100: #22211e;
   --col-neutral-900: #505049;
   --col-neutral-800: #5e5d55;
   --hsl-neutral-800: 53 5% 35%;
