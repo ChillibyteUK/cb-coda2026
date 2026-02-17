@@ -47,10 +47,10 @@
       grid-area: stack;
       transition: opacity 0.3s ease-in-out;
       background-color: rgb(34, 33, 30, 0.95);
-      padding: 1.5rem;
+      padding: 2.5rem 1.5rem 1.5rem 1.5rem;
       font-size: var(--fs-400);
       color: var(--col-white);
-      align-content: flex-end;
+      align-content: normal;
       @media (min-width: 768px) {
         opacity: 0;
       }

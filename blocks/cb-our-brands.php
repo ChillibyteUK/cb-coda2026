@@ -71,7 +71,7 @@ $block_id = $block['id'] ?? '';
                             <?= esc_html( $brand_name ); ?>
                         </div>
                         <div class="brand-card__strap">
-                            <?= esc_html( $brand_link['title'] ); ?> <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/arrow-wh.svg' ); ?>" width=23 height=21 alt="" class="cb-services-nav__item-icon" />
+                            <?= esc_html( $brand_link['title'] ); ?> <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/arrow-wh.svg' ); ?>" width=23 height=21 alt="" class="" />
                         </div>
                     </div>
 				</a>
