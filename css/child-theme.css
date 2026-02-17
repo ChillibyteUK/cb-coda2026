@@ -23167,6 +23167,10 @@ span a {
   color: var(--col-neutral-500);
   margin-top: 0.5rem;
 }
+.work-index-hero__card-title .cb-services-nav__item-icon {
+  width: 40px;
+  height: 36px;
+}
 
 .cb-work-index {
   background-color: var(--col-lime-200);
