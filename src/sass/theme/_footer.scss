@@ -36,6 +36,13 @@
       display: block;
       width: 100%;
     }
+    .footer__logo-clip-2 {
+      overflow: hidden;
+      display: block;
+      width: 100%;
+      opacity: 0;
+      transform: translateY(12px);
+    }
     .footer__logo-inner {
       display: block;
       transform-origin: left center;
