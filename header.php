@@ -118,7 +118,7 @@ if ( session_status() === PHP_SESSION_NONE ) {
             <div class="d-flex justify-content-between w-100 w-lg-auto align-items-center py-0">
                 <a href="/" class="logo-clip" id="site-logo-clip" aria-label="Identity Homepage">
 					<div class="logo-inner" id="site-logo-inner">
-						<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1142.13 97.47">
+						<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="141.08 0 1001.05 97.47">
 							<defs>
 								<style>
 								.cls-1d {
@@ -145,11 +145,7 @@ if ( session_status() === PHP_SESSION_NONE ) {
 								<path class="cls-1d" d="M210.6,33.31h24.02c8.64,0,15.2,1.99,19.52,5.9,4.46,4.04,6.72,10.32,6.72,18.67,0,16.6-8.59,24.67-26.24,24.67h-24.02s0-49.24,0-49.24ZM267.27,29.17c-7.28-6.75-17.9-10.18-31.55-10.18h-42.13v77.87h42.13c27.35,0,42.42-13.85,42.42-38.99,0-12.36-3.66-22.02-10.87-28.71"/>
 								<rect class="cls-1d" x="587.05" y="19" width="17.14" height="77.87"/>
 								</g>
-								<g id="logo-bars">
-								<polygon class="cls-1d" points="70.54 18.99 0 18.99 0 33.08 70.54 33.08 141.08 33.08 141.08 18.99 70.54 18.99"/>
-								<polygon class="cls-1d" points="0 50.45 0 64.54 70.54 64.54 141.08 64.54 141.08 50.45 70.54 50.45 0 50.45"/>
-								<polygon class="cls-1d" points="0 81.9 0 95.99 70.54 95.99 141.08 95.99 141.08 81.9 70.54 81.9 0 81.9"/>
-								</g>
+
 							</g>
 						</svg>
 					</div>

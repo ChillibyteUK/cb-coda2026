@@ -21953,9 +21953,6 @@ header .logo-clip {
   margin-right: 1rem;
   vertical-align: middle;
 }
-header .logo-clip:hover .logo-inner {
-  transform: translateX(0);
-}
 @media (min-width: 992px) {
   header .logo-clip {
     min-width: 240px;
@@ -21964,8 +21961,6 @@ header .logo-clip:hover .logo-inner {
 header .logo-inner {
   display: inline-block;
   transform: translateX(0);
-  transition: transform 700ms cubic-bezier(0.22, 0.9, 0.32, 1);
-  will-change: transform;
 }
 header .logo-inner svg {
   display: block;
@@ -22017,20 +22012,6 @@ header .navbar-nav {
 }
 header .navbar-toggler {
   color: var(--col-primary-black);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .logo-inner {
-    transition: none;
-    transform: translateX(0) !important;
-  }
-  .logo-clip {
-    transition: none;
-  }
-}
-/* when animate is added, slide left by the computed final offset */
-.logo-clip.animate .logo-inner {
-  transform: translateX(var(--logo-final-offset, 0px));
 }
 
 .navbar-collapse.collapse.show {

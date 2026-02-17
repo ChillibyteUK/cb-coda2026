@@ -49,11 +49,6 @@ header {
     height: 25px;
     margin-right: 1rem;
     vertical-align: middle;
-    &:hover {
-      .logo-inner {
-        transform: translateX(0);
-      }
-    }
   }
 
   // Keep a reasonable min-width on larger screens but allow smaller viewports to shrink.
@@ -65,8 +60,6 @@ header {
   .logo-inner {
     display: inline-block;
     transform: translateX(0);
-    transition: transform 700ms cubic-bezier(0.22, 0.9, 0.32, 1);
-    will-change: transform;
     svg {
       display: block;
       height: 25px;
@@ -126,20 +119,6 @@ header {
   .navbar-toggler {
     color: var(--col-primary-black);
   }
-}
-@media (prefers-reduced-motion: reduce) {
-  .logo-inner {
-    transition: none;
-    transform: translateX(0) !important;
-  }
-  .logo-clip {
-    transition: none;
-  }
-}
-
-/* when animate is added, slide left by the computed final offset */
-.logo-clip.animate .logo-inner {
-  transform: translateX(var(--logo-final-offset, 0px));
 }
 
 .navbar-collapse.collapse.show {
