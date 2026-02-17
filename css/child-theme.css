@@ -22016,7 +22016,7 @@ header .navbar-nav {
   margin-block: 0;
 }
 header .navbar-toggler {
-  color: white;
+  color: var(--col-primary-black);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -22034,7 +22034,7 @@ header .navbar-toggler {
 }
 
 .navbar-collapse.collapse.show {
-  background-color: var(--col-primary-black);
+  background-color: var(--col-white);
   border-color: var(--col-neutral-50);
 }
 .navbar-collapse.collapse.show ul {
@@ -22043,7 +22043,7 @@ header .navbar-toggler {
 }
 
 header:has(.navbar-collapse.collapse.show) {
-  background-color: var(--col-primary-black) !important;
+  background-color: var(--col-white) !important;
 }
 
 .collapse,

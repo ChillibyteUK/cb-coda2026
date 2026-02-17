@@ -124,7 +124,7 @@ header {
   }
 
   .navbar-toggler {
-    color: white;
+    color: var(--col-primary-black);
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -143,7 +143,7 @@ header {
 }
 
 .navbar-collapse.collapse.show {
-  background-color: var(--col-primary-black);
+  background-color: var(--col-white);
   border-color: var(--col-neutral-50);
   ul {
     padding-block-start: 3rem;
@@ -152,7 +152,7 @@ header {
 }
 
 header:has(.navbar-collapse.collapse.show) {
-  background-color: var(--col-primary-black) !important;
+  background-color: var(--col-white) !important;
 }
 .collapse,
 .collapsing {
