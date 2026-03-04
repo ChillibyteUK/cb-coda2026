@@ -39,10 +39,12 @@ $t                   = ( $services && $current_page_parent === $services->ID ) ?
 					if ( get_the_ID() === $service_page->ID ) {
 						continue;
 					}
+					$service_title = get_the_title( $service_page->ID );
+					$service_title = ucfirst( strtolower( $service_title ) );
 					?>
 		<a href="<?php echo esc_url( get_permalink( $service_page->ID ) ); ?>" class="cb-services-nav__item" tabindex="0">
 			<div class="id-container px-4 px-md-5 d-flex justify-content-between align-items-center" data-aos="fade-up" data-aos-delay="<?= esc_attr( 50 * ( array_search( $service_page, $child_pages, true ) + 1 ) ); ?>">
-				<div class="cb-services-nav__item-title"><?php echo esc_html( get_the_title( $service_page->ID ) ); ?></div>
+				<div class="cb-services-nav__item-title"><?php echo esc_html( $service_title ); ?></div>
 				<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/img/arrow-wh.svg' ); ?>" alt="" class="cb-services-nav__item-icon" />
 			</div>
 		</a>
