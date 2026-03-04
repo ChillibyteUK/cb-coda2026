@@ -32,12 +32,12 @@ if ( ! $bg_case_study ) {
 	<div class="work-index-hero__title my-4">
 		<h1 class="has-850-font-size fw-light">
 			<div class="id-container px-4 px-md-5 pt-2">
-				Our work
+				<Wbr></Wbr>ork
 			</div>
 		</h1>
 		<h2 class="has-500-font-size fw-light">
 			<div class="id-container px-4 px-md-5 pt-2 pb-1">
-				Where experience changes healthcare
+				Where experience changes everything
 			</div>
 		</h2>
 	</div>
