@@ -32,7 +32,7 @@ if ( ! $bg_case_study ) {
 	<div class="work-index-hero__title my-4">
 		<h1 class="has-850-font-size fw-light">
 			<div class="id-container px-4 px-md-5 pt-2">
-				<Wbr></Wbr>ork
+				Work
 			</div>
 		</h1>
 		<h2 class="has-500-font-size fw-light">
