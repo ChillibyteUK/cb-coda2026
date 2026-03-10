@@ -4,22 +4,6 @@
  * @package  cb-identity2025
  */
 
-.cb-contact-form {
-  &__title {
-    color: var(--col-primary-black);
-    margin-block: 6rem 4rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.4);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-    font-size: var(--fs-900);
-    font-weight: var(--fw-semi);
-  }
-  &__intro {
-    color: var(--col-primary-black);
-    font-size: var(--fs-800);
-    line-height: 1.5;
-    padding-bottom: 6rem;
-  }
-}
 .cb-contact-form-spacer {
   display: block;
   height: 6rem;
@@ -44,7 +28,7 @@ form {
   .ginput_container input[type="text"],
   .ginput_container input[type="email"],
   .ginput_container textarea {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.1);
     color: var(--col-primary-black);
     border: none;
     border-radius: 0;

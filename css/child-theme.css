@@ -23731,7 +23731,7 @@ form .gfield_label {
 form .ginput_container input[type=text],
 form .ginput_container input[type=email],
 form .ginput_container textarea {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.1);
   color: var(--col-primary-black);
   border: none;
   border-radius: 0;
