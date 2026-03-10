@@ -22,6 +22,8 @@ $query_args = array(
 
 // If services are selected, filter by those term IDs.
 if ( ! empty( $selected_services ) && is_array( $selected_services ) ) {
+	// Pull the full matching set so primary-service ranking is accurate before limiting.
+	$query_args['posts_per_page'] = -1;
 	$query_args['tax_query'] = array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
 		array(
 			'taxonomy' => 'service',
@@ -120,6 +122,8 @@ if ( ! empty( $posts ) && ! empty( $selected_services ) && is_array( $selected_s
 				return strcmp( $b->post_date_gmt, $a->post_date_gmt );
 			}
 		);
+
+		$posts = array_slice( $posts, 0, (int) $count );
 	}
 }
 
