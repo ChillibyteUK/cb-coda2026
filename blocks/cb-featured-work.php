@@ -52,38 +52,75 @@ if ( ! function_exists( 'cb_get_primary_service_term_id' ) ) {
 			$primary_term_id = (int) get_post_meta( $post_id, '_yoast_wpseo_primary_service', true );
 		}
 
-		if ( $primary_term_id <= 0 || ! term_exists( $primary_term_id, 'service' ) ) {
+		if ( $primary_term_id > 0 && term_exists( $primary_term_id, 'service' ) ) {
+			return $primary_term_id;
+		}
+
+		// Fallback: first assigned service term when no Yoast primary is set.
+		$assigned_terms = wp_get_post_terms(
+			$post_id,
+			'service',
+			array(
+				'fields' => 'ids',
+			)
+		);
+
+		if ( is_wp_error( $assigned_terms ) || empty( $assigned_terms ) ) {
 			return 0;
 		}
 
-		return $primary_term_id;
+		return (int) reset( $assigned_terms );
 	}
 }
 
 $posts = $q->posts;
 
 if ( ! empty( $posts ) && ! empty( $selected_services ) && is_array( $selected_services ) ) {
-	$service_priority = array_values( array_map( 'intval', $selected_services ) );
+	$service_priority = array_values(
+		array_filter(
+			array_map(
+			static function ( $service ) {
+				if ( is_object( $service ) && isset( $service->term_id ) ) {
+					return (int) $service->term_id;
+				}
 
-	usort(
-		$posts,
-		function ( $a, $b ) use ( $service_priority ) {
-			$a_primary = cb_get_primary_service_term_id( $a->ID );
-			$b_primary = cb_get_primary_service_term_id( $b->ID );
+				if ( is_array( $service ) && isset( $service['term_id'] ) ) {
+					return (int) $service['term_id'];
+				}
 
-			$a_rank = array_search( $a_primary, $service_priority, true );
-			$b_rank = array_search( $b_primary, $service_priority, true );
+				return (int) $service;
+			},
+			$selected_services
+		),
+		static function ( $id ) {
+			return $id > 0;
+		}
+	)
+	);
 
-			$a_rank = false === $a_rank ? PHP_INT_MAX : $a_rank;
-			$b_rank = false === $b_rank ? PHP_INT_MAX : $b_rank;
+	$service_priority = array_values( array_unique( $service_priority ) );
 
-			if ( $a_rank === $b_rank ) {
+	if ( ! empty( $service_priority ) ) {
+		usort(
+			$posts,
+			static function ( $a, $b ) use ( $service_priority ) {
+				$a_primary = cb_get_primary_service_term_id( $a->ID );
+				$b_primary = cb_get_primary_service_term_id( $b->ID );
+
+				$a_rank = array_search( $a_primary, $service_priority, true );
+				$b_rank = array_search( $b_primary, $service_priority, true );
+
+				$a_rank = false === $a_rank ? PHP_INT_MAX : $a_rank;
+				$b_rank = false === $b_rank ? PHP_INT_MAX : $b_rank;
+
+				if ( $a_rank !== $b_rank ) {
+					return $a_rank <=> $b_rank;
+				}
+
 				return strcmp( $b->post_date_gmt, $a->post_date_gmt );
 			}
-
-			return $a_rank <=> $b_rank;
-		}
-	);
+		);
+	}
 }
 
 if ( $q->have_posts() ) {
@@ -97,7 +134,9 @@ if ( $q->have_posts() ) {
 	<div class="id-container px-4 px-md-5 py-4">
 		<div class="row g-2">
 		<?php
-		foreach ( $posts as $post ) {
+		global $post;
+		foreach ( $posts as $featured_post ) {
+			$post = $featured_post;
 			setup_postdata( $post );
 			$video     = get_field( 'vimeo_url', get_the_ID() );
 			$has_video = $video ? 'has_video' : '';
