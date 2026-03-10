@@ -8,6 +8,8 @@
 defined( 'ABSPATH' ) || exit;
 get_header();
 
+$subtitle = get_field( 'case_study_subtitle' ) ? get_field( 'case_study_subtitle' ) : 'Top 5 Pharma Company';
+
 ?>
 <main id="main" class="case-study">
 	<div class="has-lime-1000-border-top has-lime-1000-border-bottom mt-4">
@@ -15,7 +17,7 @@ get_header();
 	</div>
 	<div class="has-lime-1000-border-bottom mb-4">
 		<div class="id-container px-4 px-md-5">
-			<div class="fw-light has-neutral-700-color fs-500 lh-tightest pt-2 pb-1">Top 5 Pharma Company</div>
+			<div class="fw-light has-neutral-700-color fs-500 lh-tightest pt-2 pb-1"><?= esc_html( $subtitle ); ?></div>
 		</div>
 	</div>
     <?php
