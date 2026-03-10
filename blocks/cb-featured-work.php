@@ -32,6 +32,60 @@ if ( ! empty( $selected_services ) && is_array( $selected_services ) ) {
 }
 
 $q = new WP_Query( $query_args );
+
+if ( ! function_exists( 'cb_get_primary_service_term_id' ) ) {
+	/**
+	 * Get the primary service term ID for a post.
+	 *
+	 * Uses Yoast's primary term API when available, with a post meta fallback.
+	 *
+	 * @param int $post_id The post ID.
+	 * @return int The primary service term ID, or 0 if not set.
+	 */
+	function cb_get_primary_service_term_id( $post_id ) {
+		$primary_term_id = 0;
+
+		if ( class_exists( 'WPSEO_Primary_Term' ) ) {
+			$primary_term    = new WPSEO_Primary_Term( 'service', $post_id );
+			$primary_term_id = (int) $primary_term->get_primary_term();
+		} elseif ( metadata_exists( 'post', $post_id, '_yoast_wpseo_primary_service' ) ) {
+			$primary_term_id = (int) get_post_meta( $post_id, '_yoast_wpseo_primary_service', true );
+		}
+
+		if ( $primary_term_id <= 0 || ! term_exists( $primary_term_id, 'service' ) ) {
+			return 0;
+		}
+
+		return $primary_term_id;
+	}
+}
+
+$posts = $q->posts;
+
+if ( ! empty( $posts ) && ! empty( $selected_services ) && is_array( $selected_services ) ) {
+	$service_priority = array_values( array_map( 'intval', $selected_services ) );
+
+	usort(
+		$posts,
+		function ( $a, $b ) use ( $service_priority ) {
+			$a_primary = cb_get_primary_service_term_id( $a->ID );
+			$b_primary = cb_get_primary_service_term_id( $b->ID );
+
+			$a_rank = array_search( $a_primary, $service_priority, true );
+			$b_rank = array_search( $b_primary, $service_priority, true );
+
+			$a_rank = false === $a_rank ? PHP_INT_MAX : $a_rank;
+			$b_rank = false === $b_rank ? PHP_INT_MAX : $b_rank;
+
+			if ( $a_rank === $b_rank ) {
+				return strcmp( $b->post_date_gmt, $a->post_date_gmt );
+			}
+
+			return $a_rank <=> $b_rank;
+		}
+	);
+}
+
 if ( $q->have_posts() ) {
 	?>
 <section id="<?php echo esc_attr( $block_id ); ?>" class="cb-featured-work">
@@ -43,8 +97,8 @@ if ( $q->have_posts() ) {
 	<div class="id-container px-4 px-md-5 py-4">
 		<div class="row g-2">
 		<?php
-		while ( $q->have_posts() ) {
-			$q->the_post();
+		foreach ( $posts as $post ) {
+			setup_postdata( $post );
 			$video     = get_field( 'vimeo_url', get_the_ID() );
 			$has_video = $video ? 'has_video' : '';
 			?>
