@@ -45,17 +45,29 @@ if ( $background ) {
 		<?php
 	}
 
+	$left_content_type = get_field( 'left_content_type' ) ? get_field( 'left_content_type' ) : 'Text';
+
+	var_dump( $left_content_type );
+
 	?>
 	<div class="id-container px-4 px-md-5 py-4">
 		<div class="row g-5 py-4">
 			<div class="col-md-6">
-				<h2 class="w-constrained" style="--width:25ch";><?= esc_html( get_field( 'title' ) ); ?></h2>
 				<?php
-				if ( get_field( 'left_content' ) ) {
-					?>
+				if ( 'Text' === $left_content_type ) {
+					?>	
+				<h2 class="w-constrained" style="--width:25ch";><?= esc_html( get_field( 'title' ) ); ?></h2>
+					<?php
+					if ( get_field( 'left_content' ) ) {
+						?>
 				<div class="cb-pushthrough__left-content mb-3 pt-3">
-					<?= wp_kses_post( get_field( 'left_content' ) ); ?>
+						<?= wp_kses_post( get_field( 'left_content' ) ); ?>
 				</div>
+						<?php
+					}
+				} else {
+					?>
+				<img src="<?= esc_url( get_stylesheet_directory_uri() . '/img/identity-logo.svg' ); ?>" alt="Identity logo" width=340 height=33 class="cb-pushthrough__logo" style="font-size: var(--fs-500); margin-top: 0.75em;" />
 					<?php
 				}
 				?>
