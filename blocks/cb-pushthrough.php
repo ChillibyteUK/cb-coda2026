@@ -47,8 +47,6 @@ if ( $background ) {
 
 	$left_content_type = get_field( 'left_content_type' ) ? get_field( 'left_content_type' ) : 'Text';
 
-	var_dump( $left_content_type );
-
 	?>
 	<div class="id-container px-4 px-md-5 py-4">
 		<div class="row g-5 py-4">
