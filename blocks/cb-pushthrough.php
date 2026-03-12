@@ -54,7 +54,7 @@ if ( $background ) {
 				<?php
 				if ( 'Text' === $left_content_type ) {
 					?>	
-				<h2 class="w-constrained" style="--width:25ch";><?= esc_html( get_field( 'title' ) ); ?></h2>
+				<h2 class="w-constrained" style="--width:25ch"><?= esc_html( get_field( 'title' ) ); ?></h2>
 					<?php
 					if ( get_field( 'left_content' ) ) {
 						?>

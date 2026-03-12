@@ -22646,10 +22646,15 @@ span a {
   position: relative;
   z-index: 2;
   color: var(--col-lime-900);
-  font-size: 5.5vw;
+  font-size: 11.5vw;
   font-weight: var(--fw-light);
   opacity: 0;
   text-align: left;
+}
+@media (min-width: 768px) {
+  .cb-hero-prop-cta__title .text {
+    font-size: 5.5vw;
+  }
 }
 .cb-hero-prop-cta__title .line:nth-child(1) {
   margin-left: 0em;
@@ -23693,21 +23698,6 @@ span a {
  *
  * @package  cb-identity2025
  */
-.cb-contact-form__title {
-  color: var(--col-primary-black);
-  margin-block: 6rem 4rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.4);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-  font-size: var(--fs-900);
-  font-weight: var(--fw-semi);
-}
-.cb-contact-form__intro {
-  color: var(--col-primary-black);
-  font-size: var(--fs-800);
-  line-height: 1.5;
-  padding-bottom: 6rem;
-}
-
 .cb-contact-form-spacer {
   display: block;
   height: 6rem;
