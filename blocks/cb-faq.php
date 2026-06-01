@@ -12,8 +12,6 @@
 
 defined( 'ABSPATH' ) || exit;
 
-// cb_faq_add_schema_items() is defined once (function_exists guard prevents
-// fatal errors when multiple instances of this block appear on the same page).
 if ( ! function_exists( 'cb_faq_add_schema_items' ) ) {
 	/**
 	 * Collect FAQ items and output a single FAQPage schema in wp_footer.
@@ -65,46 +63,71 @@ if ( ! function_exists( 'cb_faq_add_schema_items' ) ) {
 	}
 }
 
-// Block ID.
-$block_id = $block['anchor'] ?? $block['id'];
+$faqs = get_field( 'faqs' );
 
-// Collect this block's Q&A pairs for schema.
+if ( empty( $faqs ) || ! is_array( $faqs ) ) {
+	return;
+}
+
 $block_faq_items = array();
-if ( have_rows( 'faqs' ) ) {
-	while ( have_rows( 'faqs' ) ) {
-		the_row();
-		$block_faq_items[] = array(
-			'question' => wp_strip_all_tags( get_sub_field( 'question' ) ),
-			'answer'   => wp_strip_all_tags( get_sub_field( 'answer' ) ),
-		);
+
+foreach ( $faqs as $faq ) {
+	$question = isset( $faq['question'] ) ? wp_strip_all_tags( $faq['question'] ) : '';
+	$answer   = isset( $faq['answer'] ) ? wp_strip_all_tags( $faq['answer'] ) : '';
+
+	if ( '' === $question || '' === $answer ) {
+		continue;
 	}
+
+	$block_faq_items[] = array(
+		'question' => $question,
+		'answer'   => $answer,
+	);
 }
 
 cb_faq_add_schema_items( $block_faq_items );
 
+$block_id   = $block['anchor'] ?? ( $block['id'] ?? wp_unique_id( 'cb-faq-' ) );
+$extra      = $block['className'] ?? '';
+$bg         = ! empty( $block['backgroundColor'] ) ? 'has-' . $block['backgroundColor'] . '-background-color' : '';
+$fg         = ! empty( $block['textColor'] ) ? 'has-' . $block['textColor'] . '-color' : '';
+$line_class = 'dark-lines';
+
+if ( ! empty( $block['backgroundColor'] ) ) {
+	if ( preg_match( '/(\d+)(?!.*\d)/', $block['backgroundColor'], $matches ) ) {
+		$line_class = (int) $matches[1] >= 600 ? 'light-lines' : 'dark-lines';
+	} else {
+		$line_class = 'light-lines';
+	}
+}
+
 ?>
-<section id="<?php echo esc_attr( $block_id ); ?>" class="cb-faq">
-	<div class="id-container py-4 px-4 px-md-5">
-		<?php
-		if ( have_rows( 'faqs' ) ) :
-			while ( have_rows( 'faqs' ) ) :
-				the_row();
-				$question = get_sub_field( 'question' );
-				$answer   = get_sub_field( 'answer' );
-				?>
-			<div class="cb-faq__item">
-				<div class="row g-5">
-					<div class="col-md-6 cb-faq__question">
-						<?= esc_html( $question ); ?>
-					</div>
-					<div class="col-md-6 cb-faq__answer">
-						<?= wp_kses_post( $answer ); ?>
-					</div>
+<section class="cb-faq <?= esc_attr( trim( $bg . ' ' . $fg . ' ' . $line_class . ' ' . $extra ) ); ?>" id="<?= esc_attr( $block_id ); ?>">
+	<div class="id-container px-4 px-md-5">
+		<?php foreach ( $faqs as $index => $faq ) : ?>
+			<?php
+			$question = $faq['question'] ?? '';
+			$answer   = $faq['answer'] ?? '';
+
+			if ( '' === trim( wp_strip_all_tags( $question ) ) && '' === trim( wp_strip_all_tags( $answer ) ) ) {
+				continue;
+			}
+			?>
+			<div class="cb-faq__item row" data-aos="fade-up" data-aos-delay="<?= esc_attr( $index * 100 ); ?>">
+				<div class="col-lg-6">
+					<?php if ( '' !== trim( $question ) ) : ?>
+						<p class="cb-faq__question"><?= esc_html( $question ); ?></p>
+					<?php endif; ?>
+				</div>
+				<div class="col-lg-1"></div>
+				<div class="col-lg-5">
+					<?php if ( '' !== trim( wp_strip_all_tags( $answer ) ) ) : ?>
+						<div class="cb-faq__answer">
+							<?= wp_kses_post( $answer ); ?>
+						</div>
+					<?php endif; ?>
 				</div>
 			</div>
-			<?php
-			endwhile;
-		endif;
-		?>
+		<?php endforeach; ?>
 	</div>
 </section>
