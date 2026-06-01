@@ -19,6 +19,28 @@ function acf_blocks() {
 
         acf_register_block_type(
             array(
+                'name'            => 'cb_faq',
+                'title'           => __( 'CB FAQ' ),
+                'category'        => 'layout',
+                'icon'            => 'cover-image',
+                'render_template' => 'blocks/cb-faq.php',
+                'mode'            => 'edit',
+                'supports'        => array(
+                    'mode'      => false,
+                    'anchor'    => true,
+                    'className' => true,
+                    'align'     => true,
+					'color'     => array(
+						'background' => true,
+						'text'       => true,
+						'gradients'  => false,
+					),
+                ),
+            )
+        );
+
+        acf_register_block_type(
+            array(
                 'name'            => 'cb_contact_form',
                 'title'           => __( 'CB Contact Form' ),
                 'category'        => 'layout',

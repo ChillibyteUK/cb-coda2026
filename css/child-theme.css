@@ -23731,6 +23731,28 @@ form .gform_confirmation_message_1.gform_confirmation_message {
   font-size: var(--fs-500);
 }
 
+.cb-faq__item {
+  border-top: 1px solid hsl(var(--hsl-lime-1000)/0.4) !important;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+.cb-faq__item .cb-faq__question {
+  font-size: var(--fs-500);
+  color: var(--col-neutral-700);
+}
+.cb-faq__item .cb-faq__answer {
+  font-size: var(--fs-400);
+}
+.cb-faq__item .cb-faq__answer p {
+  margin-bottom: 0.75em;
+}
+.cb-faq__item .cb-faq__answer p:last-child {
+  margin-bottom: 0;
+}
+.cb-faq__item .cb-faq__answer a {
+  text-decoration: underline;
+}
+
 body {
   background-color: var(--col-neutral-50);
 }
